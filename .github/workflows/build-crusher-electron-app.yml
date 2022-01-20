@@ -42,8 +42,11 @@ jobs:
         run: yarn setup:prod
 
       - name: Build release for electron app
-        run: yarn workspace crusher-electron-app release:all
-
+        run: |
+            yarn release:linux
+            yarn release:mac
+        working-directory: packages/electron-app
+            
       - name: Install zip
         run: sudo apt-get install zip
 
