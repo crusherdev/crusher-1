@@ -6,7 +6,7 @@ import IORedis = require("ioredis");
 // @TODO: This should come from where the class is initalized.
 function getConnectionObject(): IORedis.RedisOptions {
 	if (process.env.REDIS_CONNECTION_STRING) {
-		return { path: process.env.REDIS_CONNECTION_STRING };
+		return { path: process.env.REDIS_CONNECTION_STRING, enableReadyCheck: false, maxRetriesPerRequest: null};
 	}
 
 	let connectionObject: IORedis.RedisOptions = {
@@ -21,7 +21,7 @@ function getConnectionObject(): IORedis.RedisOptions {
 	if (process.env.REDIS_SECURE) connectionObject.tls = server;
 	else connectionObject = { ...connectionObject, ...server };
 
-	return connectionObject;
+	return { ...connectionObject, enableReadyCheck: false, maxRetriesPerRequest: null };
 }
 
 @Service()

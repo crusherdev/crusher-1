@@ -6,7 +6,7 @@ import { KeysToCamelCase } from "@modules/common/typescript/interface";
 import { ITestTable } from "@modules/resources/tests/interface";
 import { PLATFORM } from "@crusher-shared/types/platform";
 import { QueueManager } from "@modules/queue";
-import { TEST_EXECUTION_QUEUE } from "@crusher-shared/constants/queues";
+import { TEST_COMPLETE_QUEUE, TEST_EXECUTION_QUEUE } from "@crusher-shared/constants/queues";
 import { INextTestInstancesDependencies, ITestExecutionQueuePayload } from "@crusher-shared/types/queues";
 import { BuildReportService } from "@modules/resources/buildReports/service";
 import { BuildTestInstancesService } from "@modules/resources/builds/instances/service";
@@ -14,6 +14,9 @@ import { ITestInstancesTable } from "@modules/resources/builds/instances/interfa
 import { ActionsInTestEnum } from "@crusher-shared/constants/recordedActions";
 import { BadRequestError } from "routing-controllers";
 import { iAction } from "@crusher-shared/types/action";
+import { FlowJob } from "bullmq";
+import * as fs from "fs";
+const util = require("util");
 @Service()
 class TestsRunner {
 	@Inject()
@@ -62,35 +65,89 @@ class TestsRunner {
 		});
 	}
 
+	private createExecutionTaskFlow(data: any) {
+		return {
+			name: `${data.buildId}/${data.testInstanceId}`,
+			queueName: TEST_COMPLETE_QUEUE,
+			data: {
+				type: "process",
+			},
+			children: [
+				{
+					name: `${data.buildId}/${data.testInstanceId}`,
+					queueName: TEST_EXECUTION_QUEUE,
+					data,
+					children: [],
+				},
+			],
+		};
+	}
+
+	getTaskPayload(testInstance, buildTaskInfo, buildTestCount) {
+		return {
+			actions: JSON.parse(testInstance.testInfo.events),
+			config: {
+				browser: testInstance.browser as any,
+				shouldRecordVideo: buildTaskInfo.config.shouldRecordVideo,
+			},
+			buildId: buildTaskInfo.buildId,
+			testInstanceId: testInstance.id,
+			testName: testInstance.testInfo.name,
+			buildTestCount: buildTestCount,
+			startingStorageState: null,
+			startingPersistentContext: null,
+		};
+	}
+
 	private async startBuildTask(
 		buildTaskInfo: IBuildTaskPayload & {
 			testInstances: ITestInstanceDependencyArray;
 		},
 	) {
 		const { testInstances } = buildTaskInfo;
-		const addTestInstancePromiseArr = testInstances.map((testInstance) => {
-			if (!testInstance.parentTestInstanceId) {
-				return this.addTestRequestToQueue(
-					{
-						actions: JSON.parse(testInstance.testInfo.events),
-						nextTestDependencies: this._getNextTestInstancesDependencyArr(testInstance, testInstances),
-						config: {
-							browser: testInstance.browser as any,
-							shouldRecordVideo: buildTaskInfo.config.shouldRecordVideo,
-						},
-						buildId: buildTaskInfo.buildId,
-						testInstanceId: testInstance.id,
-						testName: testInstance.testInfo.name,
-						buildTestCount: testInstances.length,
-						startingStorageState: null,
-						startingPersistentContext: null,
-					},
-					buildTaskInfo.host,
-				);
-			}
-		});
+		const treeFlow: FlowJob = {
+			name: `${buildTaskInfo.buildId}/complete`,
+			queueName: TEST_COMPLETE_QUEUE,
+			data: {
+				type: "complete",
+				buildId: null,
+				latestReportId: null,
+				buildTestCount: null,
+			},
+			children: [],
+		};
 
-		await Promise.all(addTestInstancePromiseArr);
+		// await this.queueManager.getFlowProducer();
+
+		const initFlowTree = (childrens: Array<INextTestInstancesDependencies>, parentInstanceId, root: FlowJob) => {
+			for (const child of childrens) {
+				const flowTask = this.createExecutionTaskFlow(
+					this.getTaskPayload(
+						testInstances.find((a) => a.id === child.testInstanceId),
+						buildTaskInfo,
+						testInstances.length,
+					),
+				);
+				root.children.push(flowTask);
+				if (child.nextTestDependencies && child.nextTestDependencies.length) {
+					initFlowTree(child.nextTestDependencies, child.testInstanceId, flowTask.children[0]);
+				}
+			}
+		};
+
+		for (const testInstance of testInstances) {
+			if (!testInstance.parentTestInstanceId) {
+				const testInstanceFlow = this.createExecutionTaskFlow(this.getTaskPayload(testInstance, buildTaskInfo, testInstances.length));
+				treeFlow.children.push(testInstanceFlow);
+				const nextTestDependencies = this._getNextTestInstancesDependencyArr(testInstance, testInstances);
+
+				initFlowTree(nextTestDependencies, testInstance.id, testInstanceFlow.children[0]);
+			}
+		}
+
+		console.log("Flow tree is");
+		fs.writeFileSync("tree.json", JSON.stringify(treeFlow), "utf8");
+		// await this.queueManager.getFlowProducer().add(treeFlow);
 	}
 
 	private _getTestDependency(test: KeysToCamelCase<ITestTable>) {
