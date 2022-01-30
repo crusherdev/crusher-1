@@ -6,6 +6,4 @@ ADD ./output/crusher-app ./app
 
 WORKDIR /app
 
-RUN yarn && yarn build
-
-CMD ["yarn", "start"]
+CMD ["node", "server.js"]
