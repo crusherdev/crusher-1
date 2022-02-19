@@ -35,7 +35,6 @@ Create E2E test for your app remarkably fast. Ship fast and in high quality.
 
 ```
 npx crusher-cli test:create
-
 ```
 
 
@@ -43,7 +42,6 @@ npx crusher-cli test:create
 
 ```
 npx crusher-cli test:run
-
 ```
 
 Or download recorder
