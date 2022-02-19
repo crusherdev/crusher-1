@@ -1,8 +1,14 @@
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/Z6wyajH.png" height="32" style="margin: 0 auto;"/>
+<img src="https://i.imgur.com/Z6wyajH.png" height="36" style="margin: 0 auto;"/>
 <h3 align="center" >Ship the best version of your website</h3>
-<div>A modern web testing tool for developers and testers 🔥🔥 </div><br/>
+<div>A next-gen web testing for devs and testers 🔥🔥 </div><br/>
+
+
+</div>
+
+https://user-images.githubusercontent.com/118367/151245587-892e50a6-41f5-4b74-9786-fe3566f6b1fb.mp4
+
 
 <p align="center">
     <a href="https://github.com/badges/shields/graphs/contributors" alt="Contributors">
@@ -17,67 +23,37 @@
                                 <img src="https://img.shields.io/npm/types/typescript?style=flat-square" /></a>
 </p>
 
-<p align="center">
-    <a href="https://docs.crusher.dev/docs/download">Download</a> ·
-    <a href="#-start-using-crusher">Install & Use</a> ·
-    <a href="https://docs.crusher.dev">Documentation</a> ·
-</p>
 
-<p align="center">
-    <a href="https://docs.crusher.dev/docs/download">
-        <img src="https://i.imgur.com/3GCa6Kp.png" height="44"/>
-    </a>
-   <a href="#-start-using-crusher" style="margin-left: 15PX;">
-        <img src="https://i.imgur.com/DrC7M4D.png" height="44"/>
-    </a>
-</p>
-<br/>
-    
-<hr/>
+Create E2E test for your app remarkably fast. Ship fast and in high quality.
 
-</div>
+**Create full featured test in <60 secs**, all without managing infra, creating your own workflows for testing.
 
-<br>
-
-Crusher is open-source **no-code e2e web testing/monitoring**. E2E testing is grueling and frustrating. We're reimagining the whole workflow to make it blazingly simple and fast.
-
-![enter image description here](https://i.imgur.com/WvwLuzk.png)
-
-You can integrate **user flow and UI regression** testing without going thru hassle. All without managing infra, creating a framework or managing breaking selectors.
-
-Software development has evolved a lot in the last decade, but testing is still the same. Devs should be able to ship better software faster. We started this because we were genuinely frustrated with testing workflows.
-
-## 🚀 Demo
-
-Here's how testing should be in 21st century
-
-<img src="https://camo.githubusercontent.com/2676911af677a0fda9a26b1d7a06e39805bdb8438b4e338915b9497840eee4e4/68747470733a2f2f73392e67696679752e636f6d2f696d616765732f657a6769662d342d6139356636646533356563342e676966" border="0">
 
 ## 🚀 Start using Crusher
 
-**On crusher cloud for free**
+**Create a test**
 
-Fastest and most powerful way to try Crusher.
+```
+npx crusher-cli test:create
 
-<a href="https://crusher.dev/#signup">
-<img src="https://i.imgur.com/kg2eHRN.png" height="48px"/>
-</a>
+```
 
-<br/>
 
-**Deploy it on your infra (self-host)**
+**Run test**
 
- <a href="#-self-deploymentr">
-<img src="https://i.imgur.com/kPLG4s7.png" height="40px"/>
-</a>
+```
+npx crusher-cli test:run
+
+```
+
+Or download recorder
 
 ## 🔮 Features
 
-- Create **test without no code/low code**.
+- Create **test without writing code**.
+- Complete testing suite for your own use cases,
 - **Test UI** and compare **pixel perfect** change with the last build.
-- Replay tests recording to debug faster.
 - **Run test on chromium** (Open source) and **all browsers** supported (EE).
-- Primitive user actions detection.
 - Production monitoring (EE feature)
 - **Integrate with Github**/Other services as Build check (EE feature)
 - **Get alerts when build fails.**
@@ -88,7 +64,7 @@ We're still early. If you face bug/feature request, please file a new issue :D.
 
 ## 💡 Philosophy
 
-Software dev is getting more complex, with tons of APIs coming in. Things break due to various reasons & it's going to increase in the future.
+Softwares are getting more complex, we are entering API driven ecosystem.
 
 This leads to angry customers, stakeholder and your product/startup becomes chaotic which could be avoided easily.
 
@@ -108,39 +84,29 @@ We try to reimagine how testing should work. Few things that differentiate us
 
 4.) Making things simple and fast. We take inspiration from Figma, Linear :D.
 
-## 🛣️ Some use cases
+## 🛣️ Some testing use cases
 
-- Testing your app e2e with each commit or in dev.
+- E2E functional testing while developing
 - Testing responsiveness of your UIs.
-- Ensuring your app across different browsers.
-- Alerting system when any component stops working.
-- Debug system that helps you when something breaks.
-- Creating automated tools or scraping data from site.
+- Setup alerts on Production system
+- Ship fast and keep your software robust.
 - Or maybe keeping an eye on your competitor 👀
 
 ## Is Crusher the right choice for me?
-
 - Do you want to have complete testing suite?
 - Does your site break in production and staging?
 - Do you want a super simple to use software?
 - Do you care about quality of your web app?
 
 If the answers to the above are YES, then Crusher would be a great fit for your
-application. Dgraph integrates seamlessly into most application in < 5 mins.
+application. Crusher integrates seamlessly into most application in < 5 mins.
 
 ## 🛣️ Architecture
 
 ![enter image description here](https://i.imgur.com/wzU5fUO.png)
 
-## 🛣️ Roadmap
 
-Check about roadmap plan here.
-
-## 🛣️ Download Recorder
-
-Check about roadmap plan here.
-
-## 🧱 Self deployment
+## 🧱 Self deployment OSS
 
 |                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
 | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
