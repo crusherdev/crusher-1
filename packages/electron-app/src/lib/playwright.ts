@@ -104,7 +104,6 @@ class PlaywrightInstance {
 
 	async _getWebViewPage() {
 		const pages = await this.browserContext.pages();
-
 		const pagesMap = await Promise.all(
 			pages.map((page) => {
 				return page.url();
@@ -113,8 +112,9 @@ class PlaywrightInstance {
 
 		const webViewPage = await pagesMap.findIndex((url: string) => {
 			// Webview url will never start from extension url
-			return url.startsWith("about:blank");
+			return url.startsWith("about:blank#1");
 		});
+
 
 		const page = pages[webViewPage];
 		return page;

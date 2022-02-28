@@ -35,6 +35,7 @@ import { resetAppSession, setSessionInfoMeta, setUserAccountInfo } from "../stor
 import { resolveToFrontEndPath } from "@shared/utils/url";
 import { getGlobalAppConfig, writeGlobalAppConfig } from "../lib/global-config";
 import template from "@crusher-shared/utils/templateString";
+import { WebContents } from "electron/main";
 export class AppWindow {
 	private window: Electron.BrowserWindow;
 	private recorder: Recorder;
@@ -50,6 +51,8 @@ export class AppWindow {
 	private minHeight = 600;
 
 	private shouldMaximizeOnShow = true;
+
+	webViewMap = {};
 
 	public getWebContents() {
 		return this.window.webContents;
@@ -149,11 +152,9 @@ export class AppWindow {
 			} catch (err) {}
 		}, 500);
 
-		this.window.webContents.on("will-attach-webview", (event, webContents) => {
+		this.window.webContents.on("will-attach-webview", (event, webContents, params) => {
 			webContents.nodeIntegrationInSubFrames = true;
 			(webContents as any).disablePopups = false;
-			webContents.enablePreferredSizeMode = true;
-			console.log("Web contents of webview", webContents);
 			return webContents;
 		});
 
@@ -676,7 +677,7 @@ export class AppWindow {
 	private async resetRecorder(state: TRecorderState = null) {
 		this.store.dispatch(resetRecorderState(state));
 		if (this.webView) {
-			await this.webView.webContents.loadURL("about:blank");
+			await this.webView.webContents.loadURL("about:blank#1");
 		}
 		await this.clearWebViewStorage();
 	}
@@ -722,14 +723,21 @@ export class AppWindow {
 		}
 	}
 
-	async handleWebviewAttached(event, webContents) {
-		this.webView = new WebView(this);
-		this.webView.webContents.on("dom-ready", () => {
-			if (!this.webView.webContents.debugger.isAttached()) {
-				this.webView.initialize();
-				console.log("Webview initialized");
-			}
-		});
+	async handleWebviewAttached(event: Electron.Event, webContents: WebContents) {
+		const deviceId = (event as any).sender.getWebPreferences().deviceId;
+		if (deviceId === "webview-1") {
+			this.webView = new WebView(this, webContents);
+			this.webView.webContents.on("dom-ready", () => {
+				this.webViewMap[deviceId] = webContents;
+				if (!this.webView.webContents.debugger.isAttached()) {
+					this.webView.initialize();
+				}
+			});
+		} else if (deviceId === "webview-2") {
+			this.webView.webContents.on("dom-ready", () => {
+				this.webViewMap[deviceId] = webContents;
+			});
+		}
 	}
 
 	public getRecorder() {

@@ -17,19 +17,20 @@ export class WebView {
 	private _startTime: number | null = null;
 	private _initializeTime: number | null = null;
 
-	getWebContents(): WebContents {
-		const allWebContents = webContents.getAllWebContents();
-
-		const webViewWebContents = allWebContents.find((a) => a.getType() === "webview");
-		if (!webViewWebContents) throw new Error("No webview initialized");
+	getWebContents(webContents): WebContents {
+		const webViewWebContents = webContents;
 
 		webViewWebContents.session.webRequest.onBeforeSendHeaders((details, callback) => {
 			details.requestHeaders["Bypass-Tunnel-Reminder"] = "true";
 			callback({ requestHeaders: details.requestHeaders });
 		});
+		webViewWebContents.on("new-window", (event) => {
+			event.preventDefault();
+			console.log("Catching new window", this.appWindow.webViewMap["webview-2"]);
+			event.newGuest = this.appWindow.webViewMap["webview-2"];
+		});
 
 		webViewWebContents.on("-will-add-new-contents" as any, (event, url) => {
-			event.preventDefault();
 			console.log("New url is this", url);
 
 			webViewWebContents.loadURL(url);
@@ -50,9 +51,9 @@ export class WebView {
 		return webViewWebContents;
 	}
 
-	constructor(appWindow) {
+	constructor(appWindow, webContents) {
 		this.appWindow = appWindow;
-		this.webContents = this.getWebContents();
+		this.webContents = this.getWebContents(webContents);
 		this._startTime = now();
 	}
 

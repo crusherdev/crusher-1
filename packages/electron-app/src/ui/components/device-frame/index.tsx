@@ -62,19 +62,38 @@ const DeviceFrame = (props: any) => {
 		}
 	}, [ref.current]);
 
+	const [currentTab, setCurrentTab] = React.useState(1);
+
 	return (
 		<div css={containerStyle}>
 			<Conditional showIf={!!recorderInfo.device}>
 				<div style={{ width: `${recorderInfo.device?.width}rem`, height: `${recorderInfo.device?.height}rem`, maxWidth: "100%", maxHeight: "100%" }}>
+					<div css={ css`color: #fff; font-size: 14rem;`} onClick={setCurrentTab.bind(this, currentTab == 1 ? 2 : 1)}>Change Tab</div>
 					<webview
+						data-deviceId={"webview-1"}
 						ref={ref}
 						css={webviewStyle}
+						style={{ display: currentTab == 1 ? "" : "none" }}
 						id="device_browser"
 						preload={getPreloadScriptPath()}
 						title={"crusher-webview"}
-						src={"about:blank"}
+						src={"about:blank#1"}
 						partition={"crusherwebview"}
-						webpreferences="nativeWindowOpen=yes"
+						webpreferences="nativeWindowOpen=true,deviceId=webview-1"
+						allowpopups
+						nodeintegration={true}
+					/>
+					<webview
+						data-deviceId={"webview-2"}
+						ref={ref}
+						css={webviewStyle}
+						style={{ display: currentTab == 2 ? "" : "none" }}
+						id="device_browser"
+						preload={getPreloadScriptPath()}
+						title={"crusher-webview"}
+						src={"about:blank#2"}
+						partition={"crusherwebview"}
+						webpreferences="nativeWindowOpen=true,deviceId=webview-2"
 						allowpopups
 						nodeintegration={true}
 					/>
