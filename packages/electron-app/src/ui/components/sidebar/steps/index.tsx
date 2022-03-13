@@ -130,10 +130,12 @@ const Step = ({
 		const step = savedSteps[stepIndex];
 		dispatch(deleteRecordedSteps([stepIndex]));
 
-		continueRemainingSteps([{
-			...step,
-			status: ActionStatusEnum.STARTED,
-		}]);
+		continueRemainingSteps([
+			{
+				...step,
+				status: ActionStatusEnum.STARTED,
+			},
+		]);
 	};
 
 	const finalIsRunning = isRunning;
@@ -512,7 +514,7 @@ const stepsContainerStyle = css`
 	overflow-y: scroll;
 	padding-top: 0rem;
 	height: 100%;
-	padding-bottom: 20rem;
+	padding-bottom: 100rem;
 `;
 const runningStepStyle = css`
 	border-left: 3rem solid #9462ff;

@@ -116,4 +116,15 @@ const getUserAccountTests = async (token: string, customBackendPath: string | un
 	return infoResponse.data;
 };
 
-export { isProduction, getAppIconPath, encodePathAsUrl, addHttpToURLIfNotThere, parseDeepLinkUrlAction, sleep, isValidHttpUrl, waitForUserLogin, getUserInfoFromToken, getUserAccountTests };
+export {
+	isProduction,
+	getAppIconPath,
+	encodePathAsUrl,
+	addHttpToURLIfNotThere,
+	parseDeepLinkUrlAction,
+	sleep,
+	isValidHttpUrl,
+	waitForUserLogin,
+	getUserInfoFromToken,
+	getUserAccountTests,
+};

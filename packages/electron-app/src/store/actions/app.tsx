@@ -8,29 +8,29 @@ export const SET_USER_ACCOUNT_INFO = "SET_USER_ACCOUNT_INFO";
 export const RESET_APP_SESSION = "RESET_APP_SESSION";
 
 export const setShowShouldOnboardingOverlay = (shouldShow: boolean) => ({
-    type: SET_SHOW_SHOULD_ONBOARDING_OVERLAY,
-    payload: { shouldShow },
+	type: SET_SHOW_SHOULD_ONBOARDING_OVERLAY,
+	payload: { shouldShow },
 });
 
 export const setSessionInfoMeta = (sessionMeta: ISessionMeta) => ({
-    type: SET_SESSION_META,
-    payload: { sessionMeta },
+	type: SET_SESSION_META,
+	payload: { sessionMeta },
 });
 
 export const setSettngs = (settings: iReduxState["app"]["settings"]) => ({
-    type: SET_SETTINGS,
-    payload: { settings },
+	type: SET_SETTINGS,
+	payload: { settings },
 });
 
 export const setUserAccountInfo = (info) => {
-    return {
-        type: SET_USER_ACCOUNT_INFO,
-        payload: { info },
-    };
+	return {
+		type: SET_USER_ACCOUNT_INFO,
+		payload: { info },
+	};
 };
 
 export const resetAppSession = () => {
-    return {
-        type: RESET_APP_SESSION,
-    }
+	return {
+		type: RESET_APP_SESSION,
+	};
 };

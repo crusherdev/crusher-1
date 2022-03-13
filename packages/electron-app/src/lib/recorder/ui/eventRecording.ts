@@ -209,7 +209,6 @@ export default class EventRecording {
 		}
 	}
 
-
 	handleScroll(event: any) {
 		if (!event.isFromUser) return;
 		const minScrollTime = 100;
@@ -305,13 +304,16 @@ export default class EventRecording {
 		const element =
 			selectedElement instanceof SVGElement && selectedElement.tagName.toLocaleLowerCase() !== "svg" ? selectedElement.ownerSVGElement : selectedElement;
 		// const capturedElementScreenshot = await html2canvas(element).then((canvas: any) => canvas.toDataURL());
-		const hoverDependedNodes = this.eventsController.getRelevantHoverRecordsFromSavedEvents(await this.getHoverDependentNodes(element), element) as HTMLElement[];
+		const hoverDependedNodes = this.eventsController.getRelevantHoverRecordsFromSavedEvents(
+			await this.getHoverDependentNodes(element),
+			element,
+		) as HTMLElement[];
 
 		const dependentHovers = hoverDependedNodes.map((node) => {
 			return {
 				uniqueElementId: ElementsIdMap.getUniqueId(node),
 				selectors: this.eventsController.getSelectors(selectedElement),
-			}
+			};
 		});
 
 		turnOnElementMode({
@@ -357,7 +359,6 @@ export default class EventRecording {
 
 	// eslint-disable-next-line consistent-return
 	async handleWindowClick(event: any) {
-
 		const originalTimestamp = event.timeStamp;
 		event.timestamp = Date.now();
 		if (event.which === 3) {
@@ -387,8 +388,11 @@ export default class EventRecording {
 			this._clickEvents.push(event);
 			await this.trackAndSaveRelevantHover(target, event.timeStamp);
 
+			let rect = target.getBoundingClientRect();
+			const mousePos = { x: (event.clientX - rect.left) / rect.width, y: (event.clientY - rect.top) / rect.height };
 			await this.eventsController.saveCapturedEventInBackground(ActionsInTestEnum.CLICK, target, {
 				inputInfo: tagName === "label" ? inputNodeInfo : null,
+				mousePos: mousePos,
 			});
 		}
 

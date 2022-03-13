@@ -23,7 +23,12 @@ const ModalTopBar = (props: iModalTopBarProps) => {
 				</div>
 			</div>
 			<div id="close-button" onClick={closeModal} style={closeButtonStyle}>
-				<CrossIcon css={ css`width: 10rem;`} color={"#ffffff1a"} />
+				<CrossIcon
+					css={css`
+						width: 10rem;
+					`}
+					color={"#ffffff1a"}
+				/>
 			</div>
 		</div>
 	);
@@ -39,8 +44,7 @@ const topBarStyle = css`
 const topLeftSectionStyle = {
 	display: "flex",
 };
-const headingContainerStyle = {
-};
+const headingContainerStyle = {};
 const headingStyle = css`
 	font-family: Cera Pro;
     font-size: 17rem;
@@ -53,13 +57,11 @@ const headingStyle = css`
 const subHeadingStyle = css`
 	font-style: normal;
 	font-size: 14rem;
-	color: #FFFFFF;
+	color: #ffffff;
 	font-family: Cera Pro;
 	color: rgba(255, 255, 255, 0.4);
 	margin-top: 15rem;
 `;
-const closeButtonStyle = {
-};
-
+const closeButtonStyle = {};
 
 export { ModalTopBar };

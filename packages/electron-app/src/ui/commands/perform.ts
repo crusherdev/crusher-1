@@ -172,7 +172,7 @@ const performVerifyTest = async (shouldAlsoSave = true) => {
 
 const performResetAppSession = async () => {
 	ipcRenderer.invoke("reset-app-session");
-}
+};
 
 const performReplayTest = async (testId) => {
 	ipcRenderer.invoke("replay-test", { testId });
@@ -184,7 +184,7 @@ const turnOnInspectMode = () => {
 
 const turnOnElementSelectorInspectMode = () => {
 	return ipcRenderer.invoke("turn-on-element-selector-inspect-mode");
-}
+};
 
 const turnOffInspectMode = () => {
 	ipcRenderer.invoke("turn-off-recorder-inspect-mode");
@@ -192,7 +192,7 @@ const turnOffInspectMode = () => {
 
 const turnOffElementSelectorInspectMode = () => {
 	return ipcRenderer.invoke("turn-off-element-selector-inspect-mode");
-}
+};
 
 const saveTest = () => {
 	ipcRenderer.invoke("save-test");
@@ -239,9 +239,18 @@ const getUserTests = () => {
 };
 
 const performJumpTo = (stepIndex) => {
-	return ipcRenderer.invoke("jump-to-step", {stepIndex});
-}
+	return ipcRenderer.invoke("jump-to-step", { stepIndex });
+};
 
+const performQuitAndRestore = (store) => {
+	const savedSteps = getSavedSteps(store.getState());
+	window.localStorage.setItem("saved-steps", JSON.stringify(savedSteps));
+	return ipcRenderer.invoke("quit-and-restore");
+};
+
+const performSteps = (steps) => {
+	return ipcRenderer.invoke("perform-steps", { steps });
+};
 export {
 	recordHoverDependencies,
 	performAction,
@@ -273,4 +282,6 @@ export {
 	turnOffElementSelectorInspectMode,
 	performResetAppSession,
 	performJumpTo,
+	performQuitAndRestore,
+	performSteps,
 };

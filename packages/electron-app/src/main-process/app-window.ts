@@ -21,6 +21,7 @@ import {
 	setSiteUrl,
 	updateCurrentRunningStepStatus,
 	updateRecordedStep,
+	updateRecorderCrashState,
 	updateRecorderState,
 } from "../store/actions/recorder";
 import { ActionStatusEnum } from "@shared/lib/runnerLog/interface";
@@ -35,6 +36,9 @@ import { resetAppSession, setSessionInfoMeta, setUserAccountInfo } from "../stor
 import { resolveToFrontEndPath } from "@shared/utils/url";
 import { getGlobalAppConfig, writeGlobalAppConfig } from "../lib/global-config";
 import template from "@crusher-shared/utils/templateString";
+import * as fs from "fs";
+import { ILoggerReducer } from "../store/reducers/logger";
+import { clearLogs, recordLog } from "../store/actions/logger";
 
 const debug = require("debug")("crusher:main");
 export class AppWindow {
@@ -50,6 +54,7 @@ export class AppWindow {
 
 	private minWidth = 1000;
 	private minHeight = 600;
+	private savedWindowState: any = null;
 
 	private shouldMaximizeOnShow = true;
 
@@ -59,7 +64,7 @@ export class AppWindow {
 
 	public constructor(store: Store<unknown, AnyAction>) {
 		debug("Constructor called");
-		const savedWindowState = windowStateKeeper({
+		this.savedWindowState = windowStateKeeper({
 			defaultWidth: this.minWidth,
 			defaultHeight: this.minHeight,
 			maximize: false,
@@ -69,14 +74,17 @@ export class AppWindow {
 
 		const windowOptions: Electron.BrowserWindowConstructorOptions = {
 			title: APP_NAME,
-			x: savedWindowState.x,
-			y: savedWindowState.y,
-			width: savedWindowState.width,
-			height: savedWindowState.height,
+			x: this.savedWindowState.x,
+			y: this.savedWindowState.y,
+			width: this.savedWindowState.width,
+			titleBarStyle: "hidden",
+			trafficLightPosition: { x: 10, y: 8 },
+			height: this.savedWindowState.height,
 			minWidth: this.minWidth,
 			minHeight: this.minHeight,
 			autoHideMenuBar: true,
 			show: true,
+			frame: false,
 			icon: getAppIconPath(),
 			// This fixes subpixel aliasing on Windows
 			// See https://github.com/atom/atom/commit/683bef5b9d133cb194b476938c77cc07fd05b972
@@ -161,6 +169,7 @@ export class AppWindow {
 
 		ipcMain.once("renderer-ready", (event: Electron.IpcMainEvent, readyTime: number) => {
 			this._rendererReadyTime = readyTime;
+			this.sendMessage("url-action", { action: { commandName: "restore" } });
 
 			this.maybeEmitDidLoad();
 		});
@@ -193,6 +202,8 @@ export class AppWindow {
 		ipcMain.handle("get-user-tests", this.handleGetUserTests.bind(this));
 		ipcMain.handle("jump-to-step", this.handleJumpToStep.bind(this));
 		ipcMain.on("recorder-can-record-events", this.handleRecorderCanRecordEvents.bind(this));
+		ipcMain.handle("quit-and-restore", this.handleQuitAndRestore.bind(this));
+		ipcMain.handle("perform-steps", this.handlePerformSteps.bind(this));
 
 		ipcMain.handle("reset-storage", this.handleResetStorage.bind(this));
 
@@ -202,6 +213,16 @@ export class AppWindow {
 		/* Loads crusher app */
 		this.window.webContents.setVisualZoomLevelLimits(1, 3);
 		this.window.loadURL(encodePathAsUrl(__dirname, "index.html"));
+	}
+
+	private async handlePerformSteps(event, payload: { steps: any }) {
+		await this.resetRecorder();
+		await this.handleReplayTestSteps(payload.steps);
+	}
+
+	private async handleQuitAndRestore() {
+		app.relaunch();
+		app.quit();
 	}
 
 	private async handleJumpToStep(event: Electron.IpcMainEvent, payload: { stepIndex: number }) {
@@ -260,8 +281,17 @@ export class AppWindow {
 		return null;
 	}
 
+	recordLog(log: ILoggerReducer["logs"][0]) {
+		this.store.dispatch(recordLog(log));
+	}
+
 	updateRecorderState(state) {
 		this.store.dispatch(updateRecorderState(state, {}));
+	}
+
+	updateRecorderCrashState(stateMeta) {
+		console.log("Update crash recorder");
+		this.store.dispatch(updateRecorderCrashState(stateMeta));
 	}
 
 	async handleResetAppSession() {
@@ -677,6 +707,7 @@ export class AppWindow {
 
 	private async resetRecorder(state: TRecorderState = null) {
 		this.store.dispatch(resetRecorderState(state));
+		this.store.dispatch(clearLogs());
 		if (this.webView) {
 			await this.webView.webContents.loadURL("about:blank");
 		}
