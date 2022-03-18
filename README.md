@@ -17,20 +17,24 @@
 
 <br>
 
-Crusher is open-source **no-code e2e web testing/monitoring**. E2E testing is grueling and frustrating. We're reimagining the whole workflow to make it blazingly simple and fast.
+Crusher is low-code web testing platform. Testing your website is harder than it looks. We make it super easy.
+
 
 ![enter image description here](https://i.imgur.com/WvwLuzk.png)
 
-You can integrate **user flow and UI regression** testing without going thru hassle. All without managing infra, creating a framework or managing breaking selectors.
 
-Software development has evolved a lot in the last decade, but testing is still the same. Devs should be able to ship better software faster. We started this because we were genuinely frustrated with testing workflows.
+```
+npx crusher-cli test:create 
+```
+
+To get started run above in terminal. Know more about features
 
 
 ## 🚀 Start using Crusher
 
 **On crusher cloud for free**
 
-Fastest and most powerful way to try Crusher.
+Fastest way to try Crusher.
 
 <a href="https://crusher.dev/#signup">
 <img src="https://i.imgur.com/kg2eHRN.png" height="48px"/>
@@ -40,9 +44,7 @@ Fastest and most powerful way to try Crusher.
 
 **Deploy it on your infra (self-host)**
 
- <a href="#-self-deployment">
-<img src="https://i.imgur.com/kPLG4s7.png" height="40px"/>
-</a>
+- Deploy docker
 
 ## Status
 
@@ -61,56 +63,46 @@ We are currently in Public Alpha. Watch "releases" of this repo to get notified 
 - **Test UI** and compare **pixel perfect** change with the last build.
 - Replay tests recording to debug faster.
 - **Run test on chromium** (Open source) and **all browsers** supported (EE).
-- Primitive user actions detection.
 - Production monitoring (EE feature)
 - **Integrate with Github**/Other services as Build check (EE feature)
 - **Get alerts when build fails.**
-- Report accessible by everyone in the team.
-- Host in your own secure private network.
 
 We're still early. If you face bug/feature request, please file a new issue :D.
 
 ## 💡 Philosophy
 
-Software dev is getting more complex, with tons of APIs coming in. Things break due to various reasons & it's going to increase in the future.
+Software development is getting complex, with tons of APIs/Libraries coming in. Things break due to various reasons but there no way to have conifdence when you develop.
 
-This leads to angry customers, stakeholder and your product/startup becomes chaotic which could be avoided easily.
-
-Knowing when/where things break is very critical. Good workflow are needed to make it simple to deliver HQ software fast.
+This slows devs, and also gets angry customers, stakeholder. This all is chaos, knowing when things break is critical. 
 
 ## 😎 What's so cool about this
 
-Testing is not new. There are tons of solutions out there, still testing is an unsolved piece of the puzzle in the dev lifecycle.
+We're reimagining testing
 
-We try to reimagine how testing should work. Few things that differentiate us
+1.) UI first approach. The web is about how it looks, and we help you ship pixel-perfect UIs.
 
-1.) UI first approach. The web is about how it looks, and we help you ship pixel-perfect UIs. As devs, we work hard to build software. Although, in the process, some tasks are boring, grueling, & eat up our time.
+2.) Low-code for primitive action. Just browser and done.
 
-2.) No-code/low-code for primitive action. We use no-code to detect primitive user actions.
+3.) Easiest and powerful way to integrate testing.
 
-3.) Removing noise from dev workflow. We are reimagining how processed, should be.
+3.) Decreasing time to ship and increasing confidence.
 
-4.) Making things simple and fast. We take inspiration from Figma, Linear :D.
+4.) Making things simple and fast.
 
 ## 🛣️ Some use cases
-
-- Testing your app e2e with each commit or in dev.
-- Testing responsiveness of your UIs.
-- Ensuring your app across different browsers.
-- Alerting system when any component stops working.
-- Debug system that helps you when something breaks.
-- Creating automated tools or scraping data from site.
-- Or maybe keeping an eye on your competitor 👀
+- Testing your app e2e with commits or while in dev.
+- Check responsiveness of your UIs.
+- Ensuring app across different browsers.
+- Get alerts when something fails.
+- Debug system when bug..
 
 ## Is Crusher the right choice for me?
-
 - Do you want to have complete testing suite?
 - Does your site break in production and staging?
-- Do you want a super simple to use software?
+- Do you spend too much time in fixing countelss bugs.
 - Do you care about quality of your web app?
 
-If the answers to the above are YES, then Crusher would be a great fit for your
-application. Dgraph integrates seamlessly into most application in < 5 mins.
+If the answers to the above are YES, then Crusher would be a great fit. Crusher integrates seamlessly in < 5 mins.
 
 ## 🛣️ Architecture
 
