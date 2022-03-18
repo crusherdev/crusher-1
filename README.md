@@ -17,34 +17,20 @@
 
 <br>
 
-Crusher is low-code web testing platform. Testing your website is harder than it looks. We make it super easy.
+Crusher is low-code web testing platform. Testing your website is harder than it looks.
 
+Create test in few mins, also powerful for any complext task. + we're open source.
 
 ![enter image description here](https://i.imgur.com/WvwLuzk.png)
 
+## 🚀 Start using Crusher
 
+To create first test, in your terminal run
 ```
 npx crusher-cli test:create 
 ```
 
-To get started run above in terminal. Know more about features
-
-
-## 🚀 Start using Crusher
-
-**On crusher cloud for free**
-
-Fastest way to try Crusher.
-
-<a href="https://crusher.dev/#signup">
-<img src="https://i.imgur.com/kg2eHRN.png" height="48px"/>
-</a>
-
-<br/>
-
-**Deploy it on your infra (self-host)**
-
-- Deploy docker
+For self hosting, check deploy guide
 
 ## Status
 
@@ -71,9 +57,11 @@ We're still early. If you face bug/feature request, please file a new issue :D.
 
 ## 💡 Philosophy
 
-Software development is getting complex, with tons of APIs/Libraries coming in. Things break due to various reasons but there no way to have conifdence when you develop.
+Software development is complex, we use and write tons of code. Things breaks but there no way to have conifdence when you develop.
 
 This slows devs, and also gets angry customers, stakeholder. This all is chaos, knowing when things break is critical. 
+
+Crusher is e2e testing platform which makes web testing super easy for you and your team. 
 
 ## 😎 What's so cool about this
 
@@ -89,7 +77,7 @@ We're reimagining testing
 
 4.) Making things simple and fast.
 
-## 🛣️ Some use cases
+## 🛣️ Use cases
 - Testing your app e2e with commits or while in dev.
 - Check responsiveness of your UIs.
 - Ensuring app across different browsers.
@@ -108,31 +96,9 @@ If the answers to the above are YES, then Crusher would be a great fit. Crusher 
 
 ![enter image description here](https://i.imgur.com/wzU5fUO.png)
 
-## 🛣️ Roadmap
-
-Check about roadmap plan here.
-
-## 🛣️ Download Recorder
-
-Check about roadmap plan here.
 
 ## 🧱 Self deployment
 
 |                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
 | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
 | <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
-
-### 📝 License
-
-<hr/>
-This repo is entirely MIT licensed, except the **/src_ee directory (if applicable).
-EE features (contained in the src_ee directory) require a Crusher license. Contact us at [contact@crusher.dev](mailto:sales@crusher.dev) for more information.
-
-## 🤝 Contributors
-
-<hr/>
-<p float="left">
-
-<img src="https://avatars.githubusercontent.com/u/6849438?v=4" height="56" style="margin: 4px;"/> &nbsp;<img src="https://avatars.githubusercontent.com/u/16796008?v=4" height="56" style="margin: 4px;"/> &nbsp;<img src="https://avatars.githubusercontent.com/u/51117080?v=4" height="56" style="margin: 4px;"/>&nbsp;<img src="https://avatars.githubusercontent.com/u/55053424?v=4" height="56" style="margin: 4px;"/>
-
-</p>
