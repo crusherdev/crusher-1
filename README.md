@@ -2,36 +2,14 @@
 <div align="center">
 <img src="https://i.imgur.com/Z6wyajH.png" height="32" style="margin: 0 auto;"/>
 <h3 align="center" >Ship the best version of your website</h3>
-<div>A modern web testing tool for developers and testers 🔥🔥 </div><br/>
-
-<p align="center">
-    <a href="https://github.com/badges/shields/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/badge/license-MIT-%23373737?style=flat-square&color=ff3db6" /></a>
-    <a href="#backers" alt="Backers on Open Collective">
-        <img src="https://img.shields.io/badge/node-%3E=%2014.0.0-brightgreen?style=flat-square" /></a>
-            <a href="#backers" alt="Backers on Open Collective">
-        <img src="https://img.shields.io/github/last-commit/crusherdev/crusher?color=8e3dff&style=flat-square" /></a>
-                    <a href="#backers" alt="Backers on Open Collective">
-                <img src="https://img.shields.io/docker/image-size/7296823551/test?style=flat-square" /></a>
-                                    <a href="#backers" alt="Backers on Open Collective">
-                                <img src="https://img.shields.io/npm/types/typescript?style=flat-square" /></a>
-</p>
-
+<div>Accelerated testing for developers 🔥🔥 </div><br/>
+    
 <p align="center">
     <a href="https://docs.crusher.dev/docs/download">Download</a> ·
     <a href="#-start-using-crusher">Install & Use</a> ·
     <a href="https://docs.crusher.dev">Documentation</a> ·
 </p>
 
-<p align="center">
-    <a href="https://docs.crusher.dev/docs/download">
-        <img src="https://i.imgur.com/3GCa6Kp.png" height="44"/>
-    </a>
-   <a href="#-start-using-crusher" style="margin-left: 15PX;">
-        <img src="https://i.imgur.com/DrC7M4D.png" height="44"/>
-    </a>
-</p>
-<br/>
     
 <hr/>
 
@@ -47,11 +25,6 @@ You can integrate **user flow and UI regression** testing without going thru has
 
 Software development has evolved a lot in the last decade, but testing is still the same. Devs should be able to ship better software faster. We started this because we were genuinely frustrated with testing workflows.
 
-## 🚀 Demo
-
-Here's how testing should be in 21st century
-
-<img src="https://camo.githubusercontent.com/2676911af677a0fda9a26b1d7a06e39805bdb8438b4e338915b9497840eee4e4/68747470733a2f2f73392e67696679752e636f6d2f696d616765732f657a6769662d342d6139356636646533356563342e676966" border="0">
 
 ## 🚀 Start using Crusher
 
@@ -70,6 +43,17 @@ Fastest and most powerful way to try Crusher.
  <a href="#-self-deployment">
 <img src="https://i.imgur.com/kPLG4s7.png" height="40px"/>
 </a>
+
+## Status
+
+- [x] Alpha: We are testing Supabase with a closed set of customers
+- [x] Public Alpha: Anyone can sign up over at [app.supabase.io](https://app.supabase.io). But go easy on us, there are a few kinks
+- [ ] Public Beta: Stable enough for most non-enterprise use-cases
+- [ ] Public: Production-ready
+
+We are currently in Public Alpha. Watch "releases" of this repo to get notified of major updates.
+
+![Screen_Recording_2022-03-19_at_1_31_02_AM_AdobeCreativeCloudExpress__online-video-cutter_com__AdobeCreativeCloudExpress_AdobeCreativeCloudExpress (2)](https://user-images.githubusercontent.com/16796008/159077783-fa8f20d0-663b-47d5-88a5-95e443f97168.gif)
 
 ## 🔮 Features
 
