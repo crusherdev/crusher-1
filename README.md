@@ -46,8 +46,8 @@ Fastest and most powerful way to try Crusher.
 
 ## Status
 
-- [x] Alpha: We are testing Supabase with a closed set of customers
-- [x] Public Alpha: Anyone can sign up over at [app.supabase.io](https://app.supabase.io). But go easy on us, there are a few kinks
+- [x] Alpha: We are testing Crusher with a closed set of customers
+- [x] Public Alpha: Anyone can sign up over at [app.crusher.dev](https://app.crusher.dev). But go easy on us, there are a few kinks
 - [ ] Public Beta: Stable enough for most non-enterprise use-cases
 - [ ] Public: Production-ready
 
