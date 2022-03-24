@@ -501,8 +501,8 @@ const Toolbar = (props: any) => {
 										display: flex;
 										align-items: center;
 										background: #0d1010;
-										padding: 0rem 10rem;
-										border-right: 0.35px solid rgba(255, 255, 255, 0.17);
+										padding: 0rem 8rem;
+									   border-right: 1px solid rgb(24 28 35);
 									`}
 								>
 									<MoreIcon
@@ -525,6 +525,8 @@ const Toolbar = (props: any) => {
 											border-left-width: 1rem;
 											border-left-style: solid;
 											border-left-color: #181c23;
+											border-bottom-left-radius: 0;
+											border-top-left-radius: 0;
 										}
 										input {
 											width: 50rem;
@@ -562,7 +564,7 @@ const Toolbar = (props: any) => {
 					</Conditional>
 				</div>
 				<Conditional showIf={isRecorderInInitialState}>
-					<Button className={"ml-24"} onClick={handleUrlReturn} bgColor="tertiary-outline" css={buttonStyle}>
+					<Button onClick={handleUrlReturn} bgColor="tertiary-outline" css={buttonStyle}>
 						Start
 					</Button>
 				</Conditional>
@@ -644,7 +646,7 @@ const inputStyle = css`
 		outline-color: #9462ff;
 		outline-width: 1px;
 		box-sizing: border-box;
-		border-radius: 8rem 0px 0px 8rem;
+		border-radius: 8rem 8px 8px 8rem;
 		color: rgba(255, 255, 255, 0.93);
 		height: 100%;
 		padding-left: 50rem;
@@ -666,30 +668,30 @@ const buttonStyle = css`
 	box-sizing: border-box;
 	border-radius: 4rem;
 	width: 93rem;
-	height: 34rem;
+	height: 32rem;
+	margin-left: 8rem;
 `;
 
 const saveButtonStyle = css`
-	width: 128rem;
-	height: 30rem;
-	background: linear-gradient(0deg, #9462ff, #9462ff);
-	border-radius: 6rem;
-	font-family: Gilroy;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14rem;
-	line-height: 17rem;
-	border: 0.5px solid transparent;
-	border-right-width: 0rem;
-	border-top-right-radius: 0rem;
-	border-bottom-right-radius: 0rem;
-	color: #ffffff;
-	:hover {
-		border: 0.5px solid #8860de;
-		border-right-width: 0rem;
-		border-top-right-radius: 0rem;
-		border-bottom-right-radius: 0rem;
-	}
+  width: 112rem;
+  padding-right: 6rem;
+  height: 32rem;
+  background: linear-gradient(0deg, #9462ff, #9462ff);
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 14rem;
+  line-height: 17rem;
+  border: 0.5px solid transparent;
+  border-right-width: 0rem;
+  border-radius: 6rem 0rem 0rem 6rem;
+  color: #ffffff;
+
+  :hover {
+    border: 0.5px solid #8860de;
+    border-right-width: 0rem;
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+  }
 `;
 const recTextStyle = css`
 	font-family: Cera Pro;
