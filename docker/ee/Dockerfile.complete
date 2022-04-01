@@ -12,13 +12,56 @@ RUN mkdir -p /var/run/sshd && \
     apt update && \
     apt install -y openssh-server && \
     apt install -y unzip && \
+    apt install -y sudo && \
     chmod +x /usr/local/bin/docker-entrypoint.sh && \
     export SSH_PUBLIC_KEY="$SSH_PUBLIC_KEY"
+
+# === Install postgres and redis ===
+### Gitpod user ###
+# '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
+RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod \
+    # passwordless sudo for users in the 'sudo' group
+    && sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
+
+USER gitpod
+
+# use sudo so that user does not get sudo usage info on (the first) login
+RUN sudo echo "Running 'sudo' for Gitpod: success" && \
+    # create .bashrc.d folder and source it in the bashrc
+    mkdir -p /home/gitpod/.bashrc.d && \
+    (echo; echo "for i in \$(ls -A \$HOME/.bashrc.d/); do source \$HOME/.bashrc.d/\$i; done"; echo) >> /home/gitpod/.bashrc
+
+RUN sudo apt install -y postgresql-12 postgresql-contrib-12 && \
+    sudo apt install -y redis-server
+
+ENV PGWORKSPACE="/workspace/.pgsql"
+ENV PGDATA="$PGWORKSPACE/data"
+
+SHELL ["/usr/bin/bash", "-c"]
+
+# Setup PostgreSQL server for user gitpod
+ENV PATH="/usr/lib/postgresql/12/bin:$PATH"
+ENV HOME=/home/gitpod
+
+RUN PGDATA="${PGDATA//\/workspace/$HOME}" \
+ && mkdir -p ~/.pg_ctl/bin ~/.pg_ctl/sockets $PGDATA \
+ && initdb -D $PGDATA \
+ && printf '#!/bin/bash\npg_ctl -D $PGDATA -l ~/.pg_ctl/log -o "-k ~/.pg_ctl/sockets" start\n' > ~/.pg_ctl/bin/pg_start \
+ && printf '#!/bin/bash\npg_ctl -D $PGDATA -l ~/.pg_ctl/log -o "-k ~/.pg_ctl/sockets" stop\n' > ~/.pg_ctl/bin/pg_stop \
+ && chmod +x ~/.pg_ctl/bin/* \
+ && printf '%s\n' '# Auto-start PostgreSQL server' \
+                  "test ! -e \$PGWORKSPACE && test -e ${PGDATA%/data} && mv ${PGDATA%/data} /workspace" \
+                  '[[ $(pg_ctl status | grep PID) ]] || pg_start > /dev/null' > ~/.bashrc.d/200-postgresql-launch \
+ && sudo bash -c 'mkdir -p /workspace'
+
+# Setup PostgreSQL server for user gitpod
+ENV PATH="$HOME/.pg_ctl/bin:$PATH"
+
 
 # === Install deps ====
 RUN curl https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz -L -o ffmpeg.tar.xz && \
     tar -xf ffmpeg.tar.xz && \
-    mv ffmpeg-*-amd64-static/ffmpeg /usr/local/bin/ && \
+    mv ffmpeg-*-amd64-static/ffmpeg /workspace/ffmpeg/ && \
     rm -rf ffmpeg.tar.xz ffmpeg-*-amd64-static
 
 RUN npm init -y && \
