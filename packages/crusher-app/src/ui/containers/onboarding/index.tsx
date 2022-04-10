@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 
 import { useAtom } from "jotai";
 import { Conditional } from "dyson/src/components/layouts";
@@ -18,7 +18,17 @@ import { InitialInfo } from '@ui/containers/onboarding/InitialInfo';
 const GetViewByStep = () => {
 	const [step] = useAtom(onboardingStepAtom);
 
-	return <InitialInfo />;
+	const [show,setShow]=useState(false)
+
+	useEffect(()=>{
+		setTimeout(setShow.bind(this,true),5000)
+	},[])
+
+	if(show){
+		return <InitialInfo/>
+	}
+
+	return <URLOnboarding />;
 	switch (step) {
 		case OnboardingStepEnum.SETUP:
 			return <SetupCrusher />;

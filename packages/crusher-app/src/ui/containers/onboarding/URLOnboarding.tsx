@@ -16,6 +16,7 @@ import { Button, Input, Text } from "dyson/src/components/atoms";
 import { useAtom } from "jotai";
 import Link from "next/link";
 import React from "react";
+import {motion} from "framer-motion";
 
 const CopyCommandInput = ({ command }: { command: string }) => {
 	const inputRef = React.useRef<HTMLInputElement>(null);
@@ -97,7 +98,16 @@ const URLOnboarding = () => {
 	};
 
 	return (
-		<>
+		<motion.div
+			css={css`
+	opacity: 0;
+`}
+			layoutId="underline"
+			animate={{ x: 0, opacity: 1 }}
+			transition={{
+				x: { type: "spring", stiffness: 20 },
+				default: { duration: .8 },
+			}}>
 			<div
 				css={css`
 					width: 632rem;
@@ -127,7 +137,7 @@ const URLOnboarding = () => {
 					<div><span css={css`color:#AFD97B;`}>npx crusher-cli test:create</span> in your repo</div>
 				</div>
 			</div>
-		</>
+		</motion.div>
 	);
 };
 

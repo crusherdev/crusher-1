@@ -17,51 +17,7 @@ import { useAtom } from "jotai";
 import Link from "next/link";
 import React, { useState } from 'react';
 import { Conditional } from 'dyson/src/components/layouts';
-
-const CopyCommandInput = ({ command }: { command: string }) => {
-	const inputRef = React.useRef<HTMLInputElement>(null);
-	const copyToClipbaord = React.useCallback(() => {
-		inputRef.current.select();
-		document.execCommand("copy");
-		sendSnackBarEvent({ type: "normal", message: "Copied to clipboard!" });
-	}, []);
-	return (
-		<Input
-			css={css`
-				width: 240rem;
-				user-select: none;
-				height: 40rem;
-				input {
-					cursor: default;
-					background: rgba(0, 0, 0, 0.49);
-					height: 40rem;
-					user-select: none;
-				}
-				:hover {
-					input {
-						background: rgba(255, 255, 255, 0.03);
-					}
-					svg {
-						opacity: 1;
-					}
-				}
-			`}
-			initialValue={command}
-			//@ts-ignore
-			readOnly={true}
-			rightIcon={
-				<CopyIconSVG
-					onClick={copyToClipbaord}
-					css={css`
-						opacity: 0.42;
-					`}
-				/>
-			}
-			forwardRef={inputRef}
-			onClick={copyToClipbaord}
-		/>
-	);
-};
+import { motion } from "framer-motion"
 
 const InitialInfo = () => {
 	const [, setOnboardingStep] = useAtom(onboardingStepAtom);
@@ -101,7 +57,16 @@ const InitialInfo = () => {
 	};
 
 	return (
-		<>
+		<motion.div
+			css={css`
+	opacity: 0;
+`}
+			layoutId="underline"
+			animate={{ x: 0, opacity: 1 }}
+					 transition={{
+						 x: { type: "spring", stiffness: 20 },
+						 default: { duration: .8 },
+					 }}>
 			<div
 				css={css`
 					width: 632rem;
@@ -152,7 +117,7 @@ const InitialInfo = () => {
 
 				<Button   className={"mt-56"} size={"big-medium"} css={css`min-width: 152rem;`}> Next </Button>
 			</div>
-		</>
+		</motion.div>
 	);
 };
 
