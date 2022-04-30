@@ -246,6 +246,17 @@ class BuildTestInstancesService {
 		]);
 	}
 
+	async updateMeta(instanceId: number, payload: any) {
+		const instanceRecord = await this.getInstance(instanceId);
+		let instanceMeta = instanceRecord.meta ? JSON.parse(instanceRecord.meta): {};
+		instanceMeta = { ...instanceMeta, ...payload };
+
+		return this.dbManager.update("UPDATE public.test_instances SET meta = ? WHERE id = ?", [
+			JSON.stringify(instanceMeta),
+			instanceId,
+		]);
+	}
+
 	async createBuildTestInstance(
 		payload: KeysToCamelCase<Omit<ITestInstancesTable, "id" | "browser" | "status" | "code" | "meta" | "context">> & { browser: Omit<BrowserEnum, "ALL">; meta: any },
 		context: any = {}

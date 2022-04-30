@@ -27,6 +27,10 @@ async function setDevice(browser: Browser, action: iAction, globals: IGlobalMana
 			width: device.width,
 			height: device.height,
 		},
+		args: [
+			'--ignore-certificate-errors',
+			'--no-sandbox',
+		],
 	});
 
 	return {

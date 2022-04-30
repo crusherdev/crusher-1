@@ -10,7 +10,7 @@ import Timeout = NodeJS.Timeout;
 import { TEST_EXECUTION_QUEUE } from "@shared/constants/queues";
 import axios from "axios";
 
-const TEST_PER_INSTANCE = 3;
+const TEST_PER_INSTANCE = 1;
 class EnterpriseTestRunnerBootstrap extends TestRunnerBootstrap {
 	sessionId: string;
 	_heartBeatInterval: Timeout;

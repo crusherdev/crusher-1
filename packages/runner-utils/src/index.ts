@@ -18,6 +18,7 @@ import { IExportsManager } from "@crusher-shared/lib/exports/interface";
 import { CommunicationChannel } from "./functions/communicationChannel";
 import { ActionDescriptor } from "./functions/actionDescriptor";
 import {handleProxyBrowserContext, handleProxyPage} from "./utils/proxy";
+import { addRRWeb } from "./utils/rrweb";
 
 type IActionCategory = "PAGE" | "BROWSER" | "ELEMENT";
 
@@ -264,4 +265,4 @@ class CrusherRunnerActions {
 	}
 }
 
-export { CrusherRunnerActions, handlePopup, getBrowserActions, getMainActions, CrusherSdk, CommunicationChannel, ActionDescriptor, handleProxyPage, handleProxyBrowserContext };
+export { CrusherRunnerActions, handlePopup, getBrowserActions, getMainActions, CrusherSdk, CommunicationChannel, ActionDescriptor, handleProxyPage, handleProxyBrowserContext, addRRWeb };

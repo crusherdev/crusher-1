@@ -46,7 +46,7 @@ export class CodeRunnerService {
 			assetsDir: identifer,
 			videoSavePath: `/tmp/crusher/${identifer}`,
 			defaultBrowserLaunchOptions: {
-				headless: true,
+				headless: false,
 				args: runnerConfig.browser === BrowserEnum.SAFARI ? [] : ["--disable-dev-shm-usage", "--disable-gpu"],
 				executablePath: isOpenSource() ? process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH : undefined,
 			},
@@ -85,6 +85,7 @@ export class CodeRunnerService {
 		error: Error & { isStalled?: boolean; } | undefined;
 		actionResults: any;
 		persistenContextZipURL: string | null;
+		rrWebEventUrl: string | null;
 	}> {
 		const code = await this.codeGenerator.getCode(this.actions);
 		let error, recordedRawVideoUrl;
@@ -147,12 +148,22 @@ export class CodeRunnerService {
 			);
 		}
 
+		const events = this.globalManager.get("events");
+		let rrWebEventUrl = null;
+		if(events && events.length) {
+			rrWebEventUrl = await this.storageManager.uploadBuffer(
+				Buffer.from(JSON.stringify(events), "utf8"),
+				path.join("00_temp_folder/", codeGeneratorConfig.assetsDir, `rrweb.json`),
+			);
+		}
+
 		return {
 			recordedRawVideo: recordedRawVideoUrl,
 			hasPassed: !error ? true : (error.isStalled ? true : false),
 			error: error,
 			actionResults: this.getCompleteActionsResult(testActionResults),
 			persistenContextZipURL,
+			rrWebEventUrl,
 		};
 	}
 }

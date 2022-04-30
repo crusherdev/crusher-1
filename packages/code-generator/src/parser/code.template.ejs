@@ -1,7 +1,7 @@
 const playwright = require("<%= usePlaywrightChromium ? "playwright-chromium" : "playwright" %>");
 const path = require("path");
 
-const { CrusherRunnerActions, handlePopup, getBrowserActions, getMainActions, handleProxyBrowserContext, handleProxyPage } = require("<%= runnerUtilsPackagePath %>");
+const { CrusherRunnerActions, handlePopup, getBrowserActions, getMainActions, handleProxyBrowserContext, handleProxyPage, addRRWeb } = require("<%= runnerUtilsPackagePath %>");
 
 // @TODO: globalManager, logManager, storageManager, exportsManager, communicationChannel are supposed to be injected globally
 const crusherRunnerActionManager = new CrusherRunnerActions(logManager, storageManager, "<%= baseAssetsPath %>", globalManager, exportsManager, communicationChannel, null, context);
@@ -21,7 +21,7 @@ await crusherRunnerActionManager.runActions(getBrowserActions(actions), browser)
 
 const browserContextOptions = globalManager.get("browserContextOptions");
 <% if (isPersistentContext) { %>
-browserContext = await playwright["<%= browserName %>"].launchPersistentContext("<%= persistentContextDir %>", {...<%- JSON.stringify(defaultBrowserLaunchOptions) %>,  ...browserContextOptions});
+browserContext = await playwright["<%= browserName %>"].launchPersistentContext("<%= persistentContextDir %>", {...<%- JSON.stringify(defaultBrowserLaunchOptions) %>,  ...browserContextOptions, slowMo: 200});
 <% } else { %>
 browserContext = await browser.newContext({
     ...browserContextOptions,
@@ -35,6 +35,8 @@ browserContext.setDefaultNavigationTimeout(browserContextOptions.defaultNavigati
 browserContext.setDefaultTimeout(browserContextOptions.defaultTimeout);
 
 page = await browserContext.newPage();
+await addRRWeb(browserContext, page, globalManager);
+
 <% if (proxyUrlsMap) { %>
   try {
   await handleProxyBrowserContext(browserContext, <%- JSON.stringify(proxyUrlsMap) %>);
@@ -67,19 +69,9 @@ await crusherRunnerActionManager.runActions(getMainActions(actions), browser, pa
   <% if (shouldRecordVideo) { %>
   globalManager.set("recordedVideoPath", await page.video().path());
   <% } %>
-  await page.close();
-  await browserContext.close();
-  if(browser) {
-    await browser.close();
-  }
-  throw ex;
+
 }
 
 <% if (shouldRecordVideo) { %>
 globalManager.set("recordedVideoPath", await page.video().path());
 <% } %>
-await page.close();
-await browserContext.close();
-if(browser) {
- await browser.close();
-}

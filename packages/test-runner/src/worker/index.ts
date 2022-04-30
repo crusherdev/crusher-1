@@ -72,7 +72,7 @@ module.exports = async function (bullJob: iTestRunnerJob): Promise<any> {
 			persistentContextDir,
 			bullJob.data.context,
 		);
-		const { recordedRawVideo, hasPassed, error, actionResults, persistenContextZipURL } = await codeRunnerService.runTest();
+		const { recordedRawVideo, hasPassed, error, actionResults, persistenContextZipURL, rrWebEventUrl } = await codeRunnerService.runTest();
 		if (recordedRawVideo) {
 			console.log("Adding video in processing queue", recordedRawVideo);
 			await videoProcessorQueue.add(
@@ -115,6 +115,7 @@ module.exports = async function (bullJob: iTestRunnerJob): Promise<any> {
 			isStalled: error && error.isStalled ? error.isStalled : false,
 			storageState: globalManager.get("storageState"),
 			persistenContextZipURL: persistenContextZipURL,
+			rrWebEventUrl,
 		} as ITestCompleteQueuePayload);
 	} catch (err) {
 		console.error(err);

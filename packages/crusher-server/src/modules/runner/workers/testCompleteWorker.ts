@@ -252,6 +252,11 @@ const processTestAfterExecution = async function (bullJob: ITestResultWorkerJob)
 	const buildReportRecord = await buildReportService.getBuildReportRecord(buildRecord.latestReportId);
 
 	if (bullJob.data.type === "process") {
+		if(bullJob.data.rrWebEventUrl) {
+			await buildTestInstanceService.updateMeta(bullJob.data.testInstanceId, {
+				rrWebEventUrl: bullJob.data.rrWebEventUrl,
+			});
+		}
 		if(bullJob.data.parameterizedTests && bullJob.data.parameterizedTests.length) {
 			const siblingTestInstances = await testRunnerService.spawnTestInstances(bullJob.data.parameterizedTests, bullJob.data.buildExecutionPayload.config.browser || BrowserEnum.CHROME, buildReportRecord.id);
 			await handleParameterisedTestInstancesForExecution(bullJob, siblingTestInstances.testInstances, siblingTestInstances.buildInfo);
