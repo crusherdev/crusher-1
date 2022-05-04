@@ -172,7 +172,7 @@ class CrusherRunnerActions {
 				}
 
 				if (shouldSleepAfterComplete) {
-					await sleep(500);
+					await sleep(1500);
 				}
 				// Woohoo! Action executed without any errors.
 				if (shouldLog) {

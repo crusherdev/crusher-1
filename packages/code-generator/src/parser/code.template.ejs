@@ -21,7 +21,7 @@ await crusherRunnerActionManager.runActions(getBrowserActions(actions), browser)
 
 const browserContextOptions = globalManager.get("browserContextOptions");
 <% if (isPersistentContext) { %>
-browserContext = await playwright["<%= browserName %>"].launchPersistentContext("<%= persistentContextDir %>", {...<%- JSON.stringify(defaultBrowserLaunchOptions) %>,  ...browserContextOptions, slowMo: 200});
+browserContext = await playwright["<%= browserName %>"].launchPersistentContext("<%= persistentContextDir %>", {...<%- JSON.stringify(defaultBrowserLaunchOptions) %>,  ...browserContextOptions});
 <% } else { %>
 browserContext = await browser.newContext({
     ...browserContextOptions,
@@ -36,7 +36,6 @@ browserContext.setDefaultTimeout(browserContextOptions.defaultTimeout);
 
 page = await browserContext.newPage();
 await addRRWeb(browserContext, page, globalManager);
-
 <% if (proxyUrlsMap) { %>
   try {
   await handleProxyBrowserContext(browserContext, <%- JSON.stringify(proxyUrlsMap) %>);
@@ -56,22 +55,32 @@ await handlePopup(page, browserContext);
 
 
 await crusherRunnerActionManager.runActions(getMainActions(actions), browser, page);
-
+await new Promise(resolve => setTimeout(resolve, 5000));
   globalManager.set("storageState", await browserContext.storageState().then((storage) => storage).catch((err) => {  return null; }));
 } catch(ex) {
   console.error(ex);
   globalManager.set("storageState", await browserContext.storageState().then((storage) => storage).catch((err) => {  return null; }));
 
   <% if (isTracingOn) { %>
-
   await browserContext.tracing.stop({ path: '<%= tracePath %>' });
 <% } %>
   <% if (shouldRecordVideo) { %>
   globalManager.set("recordedVideoPath", await page.video().path());
   <% } %>
-
+  await page.close();
+  await browserContext.close();
+  if(browser) {
+    await browser.close();
+  }
+  throw ex;
 }
 
 <% if (shouldRecordVideo) { %>
 globalManager.set("recordedVideoPath", await page.video().path());
 <% } %>
+
+await page.close();
+await browserContext.close();
+if(browser) {
+ await browser.close();
+}

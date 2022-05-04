@@ -40,6 +40,7 @@ async function waitForNavigation(page: Page, action: iAction, globals: IGlobalMa
 	} else {
 		await sleep(2000);
 	}
+	await page.waitForLoadState("networkidle");
 	console.log("Finsihed navigation");
 }
 

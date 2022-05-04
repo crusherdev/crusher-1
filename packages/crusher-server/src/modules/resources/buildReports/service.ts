@@ -151,10 +151,21 @@ export class BuildReportService {
 		const testMapArr = await Promise.all(
 			testsWithReportDataAndActionResults
 				.filter((testReportData) => !!testReportData.testId)
-				.map(async (instance) => ({
+				.map(async (instance) => { 
+					if(instance.testInstanceMeta) {
+						try {
+							const metaJSON = JSON.parse(instance.testInstanceMeta);
+							if(metaJSON.rrWebEventUrl) {
+								metaJSON.rrWebEventUrl = await this.getPublicUrl(metaJSON.rrWebEventUrl);
+							}
+							instance.testInstanceMeta = JSON.stringify(metaJSON);
+						} catch(ex) {}
+					}
+				return {
 					...instance,
 					recordedVideoUrl: await this.getPublicUrl(instance.recordedVideoUrl),
-				})),
+				}	
+			}),
 		);
 		const testsMap = testMapArr.reduce((prev: any, current) => {
 			const testInstance = {

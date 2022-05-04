@@ -116,7 +116,7 @@ function getElementTagNameLowerCase(element: HTMLElement) {
 	return element.tagName.toLowerCase();
 }
 export function getElementDescription(node: Node) : string | null {
-	if (node.nodeType !== node.ELEMENT_NODE) {
+	if (!node || node.nodeType !== node.ELEMENT_NODE) {
 		return null;
 	}
 	const htmlElement = node as HTMLElement;

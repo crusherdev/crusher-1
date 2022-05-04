@@ -225,8 +225,7 @@ export default class EventRecording {
 				return _this.eventsController.saveCapturedEventInBackground(ActionsInTestEnum.PAGE_SCROLL, null, window.scrollY);
 			}
 
-			const isRecorderCover = target.getAttribute("data-recorder-cover");
-			if (!isRecorderCover && !event.simulatedEvent) {
+			if (!event.simulatedEvent) {
 				const inputNodeInfo = this._getInputNodeInfo(target);
 				if (inputNodeInfo && [InputNodeTypeEnum.CONTENT_EDITABLE, InputNodeTypeEnum.INPUT, InputNodeTypeEnum.TEXTAREA].includes(inputNodeInfo.type))
 					return;

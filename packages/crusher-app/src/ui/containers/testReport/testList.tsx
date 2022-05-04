@@ -791,6 +791,7 @@ function TestVideoUrl({ setOpenVideoModal, videoUrl }) {
 
 function TestOverviewTabTopSection({ name, testInstanceData, expand, isShowingVideo, setIsShowingVideo }) {
 	const { steps } = testInstanceData;
+	const router = useRouter();
 	const { screenshotCount, checksCount } = getScreenShotsAndChecks(steps);
 	const videoUrl = testInstanceData?.output?.video;
 	const isVideoAvailable = !!videoUrl;
@@ -803,6 +804,10 @@ function TestOverviewTabTopSection({ name, testInstanceData, expand, isShowingVi
 		e.stopPropagation();
 		setIsShowingVideo(true);
 	};
+
+	const handleRRWebOpenRecording = () => {
+		router.push("/app/player/24?recording=" + testInstanceMeta.rrWebEventUrl);
+	}
 
 	return (
 		<>
@@ -834,6 +839,11 @@ function TestOverviewTabTopSection({ name, testInstanceData, expand, isShowingVi
 				<Conditional showIf={isVideoAvailable}>
 					<span className={"flex text-13 mr-26"} onClick={handleOpenVideoModal.bind(this)}>
 						<PlaySVG className={"mr-10"} /> Recording
+					</span>
+				</Conditional>
+				<Conditional showIf={testInstanceMeta && testInstanceMeta.rrWebEventUrl}>
+					<span className={"flex text-13 mr-26"} onClick={handleRRWebOpenRecording.bind(this)}>
+						<PlaySVG className={"mr-10"} /> Recording (Experimental)
 					</span>
 				</Conditional>
 				<span>

@@ -16,11 +16,9 @@ app.prepare().then(() => {
 
 	server.use("/server", proxy("localhost:8000"));
 
-	// Expose storage folder if using local storage
-	// (Default Storage Method in OSS)
-	if (process.env.NEXT_PUBLIC_CRUSHER_MODE === "open-source") {
-		server.use("/output", proxy("localhost:3001"));
-	}
+
+	server.use("/output", proxy("localhost:3001"));
+
 
 	// // This is currently used for
 	server.use("/assets", express.static(".next/public/assets"));

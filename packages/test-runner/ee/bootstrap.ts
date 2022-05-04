@@ -47,7 +47,7 @@ class EnterpriseTestRunnerBootstrap extends TestRunnerBootstrap {
 
 		const workerPath = fs.existsSync(path.resolve(__dirname, "./worker.js")) ? path.resolve(__dirname, "./worker.js") : path.resolve("src/worker/index.ts");
 
-		this._worker = await this.queueManager.addWorkerForQueue(TEST_EXECUTION_QUEUE, workerPath, {
+		this._worker = await this.queueManager.addWorkerForQueue(TEST_EXECUTION_QUEUE, require("../src/worker/index"), {
 			concurrency: TEST_PER_INSTANCE,
 			lockDuration: 120000,
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
