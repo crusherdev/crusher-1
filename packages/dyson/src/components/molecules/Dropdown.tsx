@@ -15,6 +15,9 @@ const DropdownBox = ({ children, dropdownCSS }: React.DetailedHTMLProps<any, any
 	</div>
 );
 
+//@ts-ignore
+DropdownBox.whyDidYouRender = true;
+
 /*
 		Should we change this to composability api??
 
@@ -34,6 +37,8 @@ export const Dropdown = ({ initialState, children, dropdownCSS, component, callb
 	);
 };
 
+//@ts-ignore
+Dropdown.whyDidYouRender = true;
 export const dropdDown = css`
 	top: calc(100% + 4rem);
 	left: calc(100% - 54rem);

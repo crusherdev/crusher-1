@@ -10,17 +10,6 @@ import { installSameOriginFilter } from "./same-origin-filter";
 import configureStore from "../store/configureStore";
 import * as path from "path";
 
-const os = require('os');
-
-    Sentry.init({ dsn: "https://392b9a7bcc324b2dbdff0146ccfee044@o1075083.ingest.sentry.io/6075223" });
-    require('update-electron-app')({
-		repo: 'crusherdev/crusher-downloads',
-		updateInterval: '5 minutes',
-		logger: require('electron-log')
-	});
-
-app.setAppLogsPath();
-
 let mainWindow: AppWindow | null = null
 
 const launchTime = now();
@@ -31,7 +20,6 @@ let onDidLoadFns: Array<OnDidLoadFn> | null = []
 
 function setupElectronApp() {
 	app.setName(APP_NAME);
-	app.setAppLogsPath()
 
 	app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 	app.commandLine.appendSwitch("disable-features", "CrossOriginOpenerPolicy");

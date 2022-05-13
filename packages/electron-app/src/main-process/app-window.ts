@@ -89,7 +89,7 @@ export class AppWindow {
 			icon: getAppIconPath(),
 			// This fixes subpixel aliasing on Windows
 			// See https://github.com/atom/atom/commit/683bef5b9d133cb194b476938c77cc07fd05b972
-			backgroundColor: "#fff",
+			backgroundColor: "#020202",
 			webPreferences: {
 				// Disable auxclick event
 				// See https://developers.google.com/web/updates/2016/10/auxclick
@@ -135,7 +135,7 @@ export class AppWindow {
 
 		// Disable zoom-in/zoom-out
 		this.window.webContents.on("did-finish-load", () => {
-			this.window.webContents.setVisualZoomLevelLimits(1, 1);
+			// this.window.webContents.setVisualZoomLevelLimits(1, 1);
 		});
 
 		this.window.webContents.on("did-fail-load", () => {
@@ -147,18 +147,18 @@ export class AppWindow {
 
 		// @TODO: Remove this asap, this is only here as a workaround to not
 		// having proper events for webview scrolling
-		setInterval(async () => {
-			try {
-				const recorderInfo = getRecorderInfo(this.store.getState() as any);
+		// setInterval(async () => {
+		// 	try {
+		// 		const recorderInfo = getRecorderInfo(this.store.getState() as any);
 
-				if (recorderInfo && recorderInfo.device && recorderInfo.device.width) {
-					await this.window.webContents.executeJavaScript(
-						`if(document.querySelector('webview')){ document.querySelector('webview').setZoomFactor(document.querySelector('webview').offsetWidth / ${recorderInfo.device.width}); }`,
-					);
-				}
-				process.env.CRUSHER_SCALE_FACTOR = this.window.webContents.zoomFactor * (this.webView ? this.webView.webContents.zoomFactor : 1) + "";
-			} catch (err) {}
-		}, 500);
+		// 		if (recorderInfo && recorderInfo.device && recorderInfo.device.width) {
+		// 			await this.window.webContents.executeJavaScript(
+		// 				`if(document.querySelector('webview')){ document.querySelector('webview').setZoomFactor(document.querySelector('webview').offsetWidth / ${recorderInfo.device.width}); }`,
+		// 			);
+		// 		}
+		// 		process.env.CRUSHER_SCALE_FACTOR = this.window.webContents.zoomFactor * (this.webView ? this.webView.webContents.zoomFactor : 1) + "";
+		// 	} catch (err) {}
+		// }, 500);
 
 		this.window.webContents.on("will-attach-webview", (event, webContents) => {
 			webContents.nodeIntegrationInSubFrames = true;
@@ -169,6 +169,7 @@ export class AppWindow {
 
 		ipcMain.once("renderer-ready", (event: Electron.IpcMainEvent, readyTime: number) => {
 			this._rendererReadyTime = readyTime;
+			console.log("Rendering time is", this._rendererReadyTime);
 			this.sendMessage("url-action", { action: { commandName: "restore" } });
 
 			this.maybeEmitDidLoad();
@@ -718,7 +719,7 @@ export class AppWindow {
 	private turnOnInspectMode() {
 		this.store.dispatch(setInspectMode(true));
 		this.webView._turnOnInspectMode();
-		this.webView.webContents.focus();
+		// this.webView.webContents.focus();
 	}
 
 	private turnOnElementSelectorInspectMode() {

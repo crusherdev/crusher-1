@@ -583,7 +583,7 @@ export default class EventRecording {
 				return out;
 			},
 		});
-		setInterval(this.pollInterval, 300);
+		// setInterval(this.pollInterval, 300);
 	}
 
 	removeNodeListeners() {
