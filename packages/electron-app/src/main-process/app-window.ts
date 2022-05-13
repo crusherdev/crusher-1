@@ -67,9 +67,7 @@ export class AppWindow {
 	public constructor(store: Store<unknown, AnyAction>) {
 		debug("Constructor called");
 		this.savedWindowState = windowStateKeeper({
-			defaultWidth: this.minWidth,
-			defaultHeight: this.minHeight,
-			maximize: false,
+			maximize: true,
 		});
 		this.recorder = new Recorder(store);
 		this.store = store;
@@ -90,7 +88,7 @@ export class AppWindow {
 			icon: getAppIconPath(),
 			// This fixes subpixel aliasing on Windows
 			// See https://github.com/atom/atom/commit/683bef5b9d133cb194b476938c77cc07fd05b972
-			backgroundColor: "#020202",
+			backgroundColor: "#111213",
 			webPreferences: {
 				// Disable auxclick event
 				// See https://developers.google.com/web/updates/2016/10/auxclick
@@ -111,17 +109,17 @@ export class AppWindow {
 
 		this.window = new BrowserWindow(windowOptions);
 
+		this.savedWindowState.manage(this.window);
 		this.splashWindow = new BrowserWindow({
 			title: APP_NAME,
-			x: this.savedWindowState.x,
-			y: this.savedWindowState.y,
 			autoHideMenuBar: true,
 			show:true,
 			frame: false,
 			icon: getAppIconPath(),
 			// This fixes subpixel aliasing on Windows
 			// See https://github.com/atom/atom/commit/683bef5b9d133cb194b476938c77cc07fd05b972
-			backgroundColor: "#020202",
+			backgroundColor: "#111213",
+			hasShadow: false,
 			webPreferences: {
 				nativeWindowOpen: true,
 				enablePreferredSizeMode: true,
@@ -189,7 +187,9 @@ export class AppWindow {
 
 		ipcMain.once("renderer-ready", (event: Electron.IpcMainEvent, readyTime: number) => {
 				this.splashWindow.destroy();
-				this.show();
+				setTimeout(() => {
+					this.window.show();
+				}, 200);
 
 			this._rendererReadyTime = readyTime;
 			console.log("Rendering time is", this._rendererReadyTime);
@@ -986,8 +986,8 @@ export class AppWindow {
 			// Only maximize the window the first time it's shown, not every time.
 			// Otherwise, it causes the problem described in desktop/desktop#11590
 			this.shouldMaximizeOnShow = false;
-			this.window.maximize();
 		}
+
 	}
 
 	/**
