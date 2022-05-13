@@ -133,7 +133,6 @@ function createWindow() {
 	})
 
 	window.onDidLoad(() => {
-	  window.show()
 	  window.sendLaunchTimingStats({
 		mainReadyTime: readyTime!,
 		loadTime: window.loadTime!,
