@@ -1,5 +1,5 @@
 console.log("Ready now...");
-
+require('v8-compile-cache');
 import * as Sentry from "@sentry/electron"
 import { isProduction, parseDeepLinkUrlAction } from "./../utils"
 import { app, session } from "electron";

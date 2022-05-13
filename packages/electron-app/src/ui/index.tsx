@@ -36,6 +36,8 @@ const App = () => {
 	const recorderInfo = useSelector(getRecorderInfo);
 	
 	React.useEffect(() => {
+		//@ts-ignore
+		document.body.querySelector("#welcome_splash").style.display = "none";
 		ipcRenderer.on("webview-initialized", async (event: Electron.IpcRendererEvent, { initializeTime }) => {
 			store.dispatch(setIsWebViewInitialized(true));
 			store.dispatch(updateRecorderState(TRecorderState.RECORDING_ACTIONS, {}));
