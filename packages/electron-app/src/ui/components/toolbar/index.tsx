@@ -503,8 +503,8 @@ const Toolbar = (props: any) => {
 						isError={urlInputError.value}
 						initialValue={url}
 						ref={urlInputRef}
-						leftIcon={LeftIconComponent}
-						rightIcon={RightIconComponent}
+						// leftIcon={LeftIconComponent}
+						// rightIcon={RightIconComponent}
 					/>
 					<Conditional showIf={urlInputError.value}>
 						<span

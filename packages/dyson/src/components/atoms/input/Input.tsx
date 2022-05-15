@@ -83,7 +83,7 @@ export const Input: React.FC<InputProps> = React.forwardRef((mainProps, ref) => 
 					{leftIcon}
 				</div>
 			</Conditional>
-			<input ref={ref} css={[inputBox(sizeStyle), isError && errorState]} {...props} onKeyUp={onKeyUp} />
+			<input type="text" ref={ref} css={[inputBox(sizeStyle), isError && errorState]} {...props} onKeyUp={onKeyUp} />
 			<Conditional showIf={!!rightIcon}>
 				<div css={rightIconStyle} className="input__rightIconContainer">
 					{rightIcon}
