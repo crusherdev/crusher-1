@@ -74,7 +74,7 @@ export default function Login({ loginWithEmailHandler }) {
 							</Link>
 
 
-							<Button
+							{/* <Button
 								onClick={loginWithEmailHandler}
 								bgColor={"tertiary-dark"}
 								className={"flex items-center justify-center mt-20"}
@@ -83,7 +83,7 @@ export default function Login({ loginWithEmailHandler }) {
 								<Text fontSize={14} weight={500}>
 									Login with Gitlab
 								</Text>
-							</Button>
+							</Button> */}
 						
 							<Button
 								onClick={loginWithEmailHandler}
@@ -128,7 +128,7 @@ color: #565657;
 `
 const containerCSS = css(`
 height: 100vh;
-background: #0D0E11;
+background: #0B0B0C;
 width: 100vw;
 `)
 

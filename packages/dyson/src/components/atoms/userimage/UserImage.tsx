@@ -22,7 +22,7 @@ export const UserImage: React.FC<UserImageProps> = ({ url }) => {
 	return (
 		<div css={userImage}>
 			<div className={"relative"}>
-				<img src={url} height={"20px"} />
+				<img src={url} height={"24px"} />
 				<div css={dotCSS}></div>
 			</div>
 		</div>
@@ -31,16 +31,14 @@ export const UserImage: React.FC<UserImageProps> = ({ url }) => {
 
 UserImage.defaultProps = UserDefaultProps;
 const userImage = css`
-	padding: 6rem 16rem 5rem;
+	padding: 8rem;
 	:hover {
-		background: #202429;
+		background: #101215;
 		border-radius: 4px;
 	}
 
 	img {
-		border-radius: 200rem;
-		height: 22rem;
-		margin-top: -2rem;
+		height: 32rem;
 	}
 `;
 

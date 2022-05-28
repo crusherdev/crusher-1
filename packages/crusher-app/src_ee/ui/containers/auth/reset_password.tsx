@@ -227,7 +227,7 @@ color: #565657;
 `
 const containerCSS = css(`
 height: 100vh;
-background: #0D0E11;
+background: #0B0B0C;
 width: 100vw;
 `)
 

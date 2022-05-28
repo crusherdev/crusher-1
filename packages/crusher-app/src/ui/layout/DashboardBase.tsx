@@ -176,7 +176,7 @@ function LeftSection() {
 	const router = useRouter();
 	const [inviteTeammates, setInviteTeamMates] = useState(false);
 	return (
-		<div css={sidebar} className={"flex flex-col justify-between py-18 px-14"}>
+		<div css={sidebar} className={"flex flex-col justify-between"}>
 			<div>
 				<UserNTeam />
 
@@ -195,20 +195,24 @@ function LeftSection() {
 				{/*	))}*/}
 				{/*</div>*/}
 
-				<ProjectList />
+				
+			</div>
+
+			<div>
+			{/* <ProjectList /> */}
 			</div>
 
 			<div>
 				<Conditional showIf={inviteTeammates}>
 					<InviteMembers onClose={setInviteTeamMates.bind(this, false)} />
 				</Conditional>
-				<div>
+				<div className="px-6 pb-8">
 					<Conditional showIf={getEdition() === EditionTypeEnum.OPEN_SOURCE}>
 						<div className={"text-12 font-600 leading-none mt-16 mb-8 ml-8"} id={"support-tagline"}>
 							Join community 💓
 						</div>
 						<a target={"_blank"} href={"https://github.com/crusherdev/crusher"}>
-							<div css={navLink} className={"flex items-center text-12.5 mt-4 leading-none"}>
+							<div css={navLink} className={"flex items-center text-13 mt-4 leading-none"}>
 								<GithubSVG className={"mr-12"} /> <span className={"mt-4 text-12.5"}>Star us on Github</span>
 							</div>
 						</a>
@@ -220,7 +224,7 @@ function LeftSection() {
 					</Conditional>
 
 					<Conditional showIf={getEdition() !== EditionTypeEnum.OPEN_SOURCE}>
-						<div css={navLink} className={"flex items-center text-12.5 mt-4"}
+						<div css={navLink} className={"flex items-center text-13 mt-4"}
 								 onClick={setInviteTeamMates.bind(this, true)}>
 							<AddSVG className={"mr-18 mb-2"} /> Invite teammates
 						</div>
@@ -229,7 +233,7 @@ function LeftSection() {
 					<HelpNSupport/>
 					<div
 						css={navLink}
-						className={"flex items-center text-12.5 mt-4"}
+						className={"flex items-center text-13 mt-4"}
 						onClick={() => {
 							window.UserLeap("track", "basic-nps");
 						}}
@@ -463,21 +467,26 @@ const navLinkSquare = css`
 `;
 
 const background = css`
-	background: #0a0b0e;
+	// background: #0A0B0E;
+
+	background: #0d0d0f;
 	min-height: 100vh;
 `;
 
 const sidebar = css`
-	width: 286rem;
+	width: 260px;
 	height: 100vh;
-	border-right: 1px solid #171b20;
+	border-right: 1px solid #1A1B1E;
 	box-sizing: border-box;
+	// background: #090A0D;
+	background: #0B0B0C;
 `;
 
 const nav = css`
 	width: 100%;
 	height: 68rem;
-	border-bottom: 1px solid #171b20;
+	border-bottom: 1px solid #1A1B1E;
+	
 `;
 const containerWidth = css`
 	//width: calc(100vw - 250rem);
