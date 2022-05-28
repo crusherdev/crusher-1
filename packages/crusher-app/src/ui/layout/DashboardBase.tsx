@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import { useAtom } from "jotai";
 
@@ -17,8 +17,7 @@ import { AddSVG, HelpSVG, LayoutSVG, NewTabSVG, PlaySVG, TraySVG } from "@svg/da
 import { GithubSVG } from "@svg/social";
 import { MenuItemHorizontal, UserNTeam } from "@ui/containers/dashboard/UserNTeam";
 import { getEdition } from "@utils/helpers";
-import { loadCrisp, openChatBox } from "@utils/common/scriptUtils";
-import { addQueryParamToPath } from "@utils/common/url";
+
 
 import { appStateAtom, appStateItemMutator } from "../../store/atoms/global/appState";
 import { projectsAtom } from "../../store/atoms/global/project";
@@ -26,7 +25,6 @@ import { buildFiltersAtom } from "../../store/atoms/pages/buildPage";
 import { updateMeta } from "../../store/mutators/metaData";
 import { PROJECT_META_KEYS, USER_META_KEYS } from "@constants/USER";
 import { handleTestRun } from "@utils/core/testUtils";
-import { Tooltip } from 'dyson/src/components/atoms/tooltip/Tooltip';
 import { TextBlock } from 'dyson/src/components/atoms/textBlock/TextBlock';
 
 const Download = dynamic(() => import("@ui/containers/dashboard/Download"));
@@ -172,6 +170,164 @@ function HelpNSupport() {
 	</Dropdown>;
 }
 
+
+function Home(props) {
+	return (
+	  <svg
+		width={14}
+		height={14}
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	  >
+		<g clipPath="url(#prefix__clip0_2656_1568)">
+		  <path
+			d="M13.754 5.503l-1.752-1.428V1.792a.467.467 0 00-.466-.466h-1.102a.467.467 0 00-.466.466v.625L7.627.509a.994.994 0 00-.628-.214.99.99 0 00-.626.213L.246 5.503c-.279.227-.262.425-.227.522.035.097.146.26.504.26h.839v6.57c0 .468.38.85.848.85h2.65c.463 0 .826-.374.826-.85V10.16a.46.46 0 01.445-.441h1.78c.223 0 .403.198.403.44v2.695c0 .46.398.85.87.85h2.606a.85.85 0 00.848-.85v-6.57h.84c.357 0 .468-.163.503-.26.035-.097.052-.295-.227-.522z"
+			fill="#BDBDBD"
+		  />
+		</g>
+		<defs>
+		  <clipPath id="prefix__clip0_2656_1568">
+			<path fill="#fff" d="M0 0h14v14H0z" />
+		  </clipPath>
+		</defs>
+	  </svg>
+	);
+  }
+  
+  function Test(props) {
+	return (
+	  <svg
+		width={14}
+		height={14}
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	  >
+		<g clipPath="url(#prefix__clip0_2656_1662)">
+		  <path
+			d="M13.979 5.27a7.108 7.108 0 00-1.841-3.188A7.063 7.063 0 007.11 0C5.211 0 3.426.74 2.083 2.082a7.118 7.118 0 000 10.055 7.108 7.108 0 003.187 1.841.647.647 0 00.624-.167l7.917-7.918a.646.646 0 00.168-.624zM2.997 2.995A5.779 5.779 0 017.11 1.293a5.78 5.78 0 014.114 1.703 5.83 5.83 0 011.136 1.608 7.103 7.103 0 00-5.707 2.05 7.104 7.104 0 00-2.049 5.706 5.824 5.824 0 01-1.607-9.363z"
+			fill="#BDBDBD"
+		  />
+		</g>
+		<defs>
+		  <clipPath id="prefix__clip0_2656_1662">
+			<path fill="#fff" d="M0 0h14v14H0z" />
+		  </clipPath>
+		</defs>
+	  </svg>
+	);
+  }
+
+
+function Builds(props) {
+	return (
+	  <svg
+		width={14}
+		height={12}
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	  >
+		<path
+		  d="M1.261.599C.566.599 0 1.165 0 1.86v6.302c0 .695.566 1.261 1.261 1.261h.405V4.247c0-.994.808-1.802 1.801-1.802h8.328V1.86c0-.695-.566-1.26-1.26-1.26H1.26V.598z"
+		  fill="#9570FF"
+		/>
+		<path
+		  d="M3.464 2.985c-.695 0-1.26.566-1.26 1.261v6.302c0 .696.565 1.261 1.26 1.261h9.273c.696 0 1.262-.566 1.262-1.261V4.246c0-.695-.566-1.26-1.262-1.26H3.464z"
+		  fill="#9570FF"
+		/>
+	  </svg>
+	);
+  }
+
+
+function Plugin(props) {
+	return (
+	  <svg
+		width={13}
+		height={12}
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	  >
+		<path
+		  d="M10.947 5.284h-.319V2.583c0-.2-.083-.392-.23-.533a.806.806 0 00-.557-.22H7.479A1.895 1.895 0 006.94.612 2.056 2.056 0 005.712.01c-.27-.027-.542 0-.8.079a1.993 1.993 0 00-.7.378c-.203.17-.367.38-.483.614a1.817 1.817 0 00-.186.748H.787a.806.806 0 00-.556.221.737.737 0 00-.231.533V5.66h1.106c.303-.008.598.09.83.277.232.187.383.45.426.737.015.157-.004.316-.057.466a1.18 1.18 0 01-.645.68c-.151.066-.314.1-.48.1H0v3.327c0 .2.083.391.23.532.148.142.348.221.557.221h9.054c.209 0 .409-.08.556-.22a.737.737 0 00.231-.533V9.05h.394c.276.002.55-.052.802-.159.253-.106.48-.262.665-.458.186-.196.326-.427.413-.678.086-.251.116-.517.088-.78a1.917 1.917 0 00-.684-1.219 2.082 2.082 0 00-1.36-.472z"
+		  fill="#BDBDBD"
+		/>
+	  </svg>
+	);
+  }
+
+const items = [{
+	name: 'Home',
+	icon: <Home/>,
+	path: '/app/dashboard'
+},
+{
+	name: 'Test',
+	icon: <Test/>,
+	path: '/app/tests'
+},
+{
+	name: 'Builds',
+	icon: <Builds/>,
+	path: '/app/builds',
+},
+{
+	name: 'Settings',
+	icon: <Plugin/>,
+	path: '/settings/project/basic'
+}
+]
+function LeftMenu(){
+
+	const { pathname, query, asPath } = useRouter();
+
+	return (items.map((item,i)=>{
+
+		let isNavLinkSelected = false;
+
+		const {path,keyToCheck } = item;
+		const queryParam = "";
+		if (queryParam) {
+			const [key] = queryParam.split("=");
+			isNavLinkSelected = key && path === pathname && asPath.includes(queryParam);
+		} else {
+			isNavLinkSelected = path === pathname && query[keyToCheck] === undefined ;
+		}
+
+		return (
+			<Link href={item.path}>
+			<div css={[menuItem,isNavLinkSelected&&selected]}>
+				{item.icon} <span className="name">{item.name}</span>
+			</div>
+			</Link>
+		)
+	}))
+}
+
+const menuItem=css`
+	height: 36px;
+	display: flex;
+	align-items: center;
+	padding-left: 16px;
+	display: flex;
+	.name{
+		margin-left:16px;
+		font-size: 15rem;
+		margin-top: 1px;
+		font-weight: 500;
+	}
+	:hover{
+		background: #111215;
+	}
+`
+
+const selected=css`
+	background: #111215;
+`
+
 function LeftSection() {
 	const router = useRouter();
 	const [inviteTeammates, setInviteTeamMates] = useState(false);
@@ -196,11 +352,11 @@ function LeftSection() {
 				{/*</div>*/}
 
 				
+				<div className="mt-32">
+					<LeftMenu/>
+				</div>
 			</div>
 
-			<div>
-			{/* <ProjectList /> */}
-			</div>
 
 			<div>
 				<Conditional showIf={inviteTeammates}>
@@ -306,31 +462,6 @@ function DropdownContent() {
 	);
 }
 
-const TOP_NAV_LINK = [
-	{
-		name: "overview",
-		path: "/app/dashboard",
-	},
-	{
-		name: "Tests",
-		path: "/app/tests",
-	},
-	{
-		name: "Monitoring",
-		path: "/app/builds",
-		queryParam: "trigger=CRON",
-	},
-	{
-		name: "Builds",
-		path: "/app/builds",
-		keyToCheck: "trigger",
-	},
-	{
-		name: "Settings",
-		path: "/settings/project/basic",
-	},
-];
-
 function RunTest() {
 	const router = useRouter();
 	const [{ selectedProjectId }] = useAtom(appStateAtom);
@@ -366,6 +497,25 @@ function RunTest() {
 	);
 }
 
+
+function ExternalLink(props) {
+	return (
+	  <svg
+		width={10}
+		height={10}
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	  >
+		<path
+		  d="M3.889 1.667v1.11H1.11V8.89h6.111V6.11h1.111v3.333a.556.556 0 01-.555.556H.556A.556.556 0 010 9.444V2.222a.556.556 0 01.556-.555h3.333zM10 0v4.444H8.889V1.896l-4.33 4.33-.785-.785 4.329-4.33H5.556V0H10z"
+		  fill="#fff"
+		/>
+	  </svg>
+	);
+  }
+
+  
 function TopNavbar() {
 	const { pathname, query, asPath } = useRouter();
 	const [showCreateTest, setShowCreateTest] = useState(false);
@@ -375,25 +525,9 @@ function TopNavbar() {
 			<div css={[containerWidth]}>
 				<div className={"w-full flex px-8 pl-0 justify-between"}>
 					<div className={"flex"}>
-						{TOP_NAV_LINK.map(({ name, path, keyToCheck, queryParam }, i) => {
-							let isNavLinkSelected = false;
-
-							if (queryParam) {
-								const [key] = queryParam.split("=");
-								isNavLinkSelected = key && path === pathname && asPath.includes(queryParam);
-							} else {
-								isNavLinkSelected = path === pathname && query[keyToCheck] === undefined;
-							}
-							return (
-								<Link href={addQueryParamToPath(path, queryParam)} key={i}>
-									<div className={"pt-20 mr-6 relative"} css={navLinkSquare}>
-										<div className={"font-cera font-500 px-24 capitalize nav-top-link"}>{name}</div>
-
-										{isNavLinkSelected && <div className={"selected mt-19"}></div>}
-									</div>
-								</Link>
-							);
-						})}
+							<a href="https://docs.crusher.dev" target="_blank" className="flex">
+								<div className="flex items-center text-14" css={docsLink}>Docs <ExternalLink className="ml-8"/></div>
+							</a>
 					</div>
 
 					<Conditional showIf={showCreateTest}>
@@ -420,6 +554,16 @@ function TopNavbar() {
 		</div>
 	);
 }
+
+const docsLink = css`
+	:hover{
+		text-decoration: underline;
+		color: #9570FF;
+		path{
+			fill: #9570FF;
+		}
+	}
+`
 
 export const SidebarTopBarLayout = ({ children, hideSidebar = false, setContainerWidth = true }) => {
 	return (
@@ -486,6 +630,9 @@ const nav = css`
 	width: 100%;
 	height: 68rem;
 	border-bottom: 1px solid #1A1B1E;
+
+	display: flex;
+	align-items: center;
 	
 `;
 const containerWidth = css`
