@@ -206,7 +206,7 @@ const getColorCSS = (color: string, impact: string, disabled: boolean) => css`
 			:hover {
 				background: ${getColor(color, impact).hover.background};
 				color: ${getColor(color, impact).hover.color};
-				border: .5px solid ${getColor(color, impact).hover.border};
+				border: 1px solid ${getColor(color, impact).hover.border};
 			}
 	`}
 

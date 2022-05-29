@@ -156,6 +156,9 @@ border-radius: 6rem;
 background: linear-gradient(133.85deg, #905CFF 25.39%, #6D55FF 74.5%, #6951FF 74.5%);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+
+// border: 1px solid rgb(106 59 173) !important;
+// background: linear-gradient(133.85deg, #9951ff 25.39%, #8d4ee6 74.5%, #874bde 74.5%) !important;
 `)
 
 const buttonCSS = css(`

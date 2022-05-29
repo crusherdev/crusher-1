@@ -492,9 +492,9 @@ function RunTest() {
 	}, []);
 
 	return (
-		<Button bgColor={"tertiary"} onClick={runProjectTest}>
+		<Button bgColor={"tertiary"} onClick={runProjectTest} css={css`    padding: 0 8rem;`}>
 			<div className={"flex items-center"}>
-				<PlaySVG className={"mr-12"} />
+				<PlaySVG className={"mr-8"} />
 				Run tests
 			</div>
 		</Button>
@@ -543,7 +543,7 @@ function TopNavbar() {
 						<Button
 							className={"ml-20"}
 							css={css`
-								width: 160rem;
+								padding: 0 20rem;
 							`}
 							onClick={setShowCreateTest.bind(this, true)}
 						>
