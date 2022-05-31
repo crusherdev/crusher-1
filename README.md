@@ -20,28 +20,14 @@
 https://user-images.githubusercontent.com/118367/151245587-892e50a6-41f5-4b74-9786-fe3566f6b1fb.mp4
 
 
-<p align="center">
-    <a href="https://github.com/badges/shields/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/badge/license-MIT-%23373737?style=flat-square&color=ff3db6" /></a>
-    <a href="#backers" alt="Backers on Open Collective">
-        <img src="https://img.shields.io/badge/node-%3E=%2014.0.0-brightgreen?style=flat-square" /></a>
-            <a href="#backers" alt="Backers on Open Collective">
-        <img src="https://img.shields.io/github/last-commit/crusherdev/crusher?color=8e3dff&style=flat-square" /></a>
-                    <a href="#backers" alt="Backers on Open Collective">
-                <img src="https://img.shields.io/docker/image-size/7296823551/test?style=flat-square" /></a>
-                                    <a href="#backers" alt="Backers on Open Collective">
-                                <img src="https://img.shields.io/npm/types/typescript?style=flat-square" /></a>
-</p>
+Create E2E test for your in command. 
 
-
-Create E2E test for your app remarkably fast. Ship fast and in high quality.
-
-**Create full featured test in <60 secs**, all without managing infra, creating your own workflows for testing.
+**Create full featured test in <60 secs**, all batteries included for you testing workflow.
 
 
 ## 🚀 Start using Crusher
 
-**Create a test**
+**Create your first test**
 
 ```
 npx crusher-cli test:create
@@ -54,7 +40,7 @@ npx crusher-cli test:create
 npx crusher-cli test:run
 ```
 
-Or download recorder
+Or see docs for other methods
 
 ## 🔮 Features
 
