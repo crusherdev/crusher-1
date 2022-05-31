@@ -1,13 +1,13 @@
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/Z6wyajH.png" height="36" style="margin: 0 auto;"/>
-<h3 align="center" >Test & ship with using low-code</h3>
-<div>Create and run test in one command</div><br/>
+<img src="https://i.imgur.com/Z6wyajH.png" height="28" style="margin: 0 auto;"/>
+<h3 align="center" >Create tests and run  instantly using low-code</h3>
+<div>Testing for developers by developers</div><br/>
 
 
 </div>
 <div align="center">
-<h4> Show some :heart: and star the repo to support the project</h4>
+<h4> Start to get updates and support project :heart: </h4>
 </div>
 
 <div align="center">
@@ -17,12 +17,15 @@
 </div>
 <br/>
 
-https://user-images.githubusercontent.com/118367/151245587-892e50a6-41f5-4b74-9786-fe3566f6b1fb.mp4
 
 
-Create E2E test for your in command. 
+https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
-**Create full featured test in <60 secs**, all batteries included for you testing workflow.
+Crusher is complete, batteries included testing framework. Create your first in < 2 mins, either using low-code or coding using SDK.
+
+Install, integrate and run tests. We use javascript + reverse engineer low of framework to make testing easy :). 
+
+Our motto: Testing shouldn't be frustrating and boring. 
 
 
 ## 🚀 Start using Crusher
@@ -30,7 +33,7 @@ Create E2E test for your in command.
 **Create your first test**
 
 ```
-npx crusher-cli test:create
+npx crusher-cli
 ```
 
 
@@ -44,17 +47,15 @@ Or see docs for other methods
 
 ## 🔮 Features
 
-- Create **test without writing code**.
-- Complete testing suite for your own use cases,
-- **Test UI** and compare **pixel perfect** change with the last build.
-- **Run test on chromium** (Open source) and **all browsers** supported (EE).
-- Production monitoring (EE feature)
-- **Integrate with Github**/Other services as Build check (EE feature)
-- **Get alerts when build fails.**
-- Report accessible by everyone in the team.
-- Host in your own secure private network.
+- Run test on multiple browsers.
+- Create test with low-code/code.
+- Self host crusher on your infra. 
+- E2E testing solution that makes testing less frustration.
+- Monitor production. Integrate with Github, slack, etc.
+- Dashboard for team workflow.
+- + lot more. And build top on crusher for advance features.
 
-We're still early. If you face bug/feature request, please file a new issue :D.
+If you face bug/feature request, please file a new issue :D.
 
 ## 💡 Philosophy
 
@@ -62,61 +63,23 @@ Softwares are getting more complex, we are entering API driven ecosystem.
 
 This leads to angry customers, stakeholder and your product/startup becomes chaotic which could be avoided easily.
 
-Knowing when/where things break is very critical. Good workflow are needed to make it simple to deliver HQ software fast.
-
-## 😎 What's so cool about this
-
-Testing is not new. There are tons of solutions out there, still testing is an unsolved piece of the puzzle in the dev lifecycle.
-
-We try to reimagine how testing should work. Few things that differentiate us
-
-1.) UI first approach. The web is about how it looks, and we help you ship pixel-perfect UIs. As devs, we work hard to build software. Although, in the process, some tasks are boring, grueling, & eat up our time.
-
-2.) No-code/low-code for primitive action. We use no-code to detect primitive user actions.
-
-3.) Removing noise from dev workflow. We are reimagining how processed, should be.
-
-4.) Making things simple and fast. We take inspiration from Figma, Linear :D.
-
-## 🛣️ Some testing use cases
-
-- E2E functional testing while developing
-- Testing responsiveness of your UIs.
-- Setup alerts on Production system
-- Ship fast and keep your software robust.
-- Or maybe keeping an eye on your competitor 👀
-
-## Is Crusher the right choice for me?
-- Do you want to have complete testing suite?
-- Does your site break in production and staging?
-- Do you want a super simple to use software?
-- Do you care about quality of your web app?
-
-If the answers to the above are YES, then Crusher would be a great fit for your
-application. Crusher integrates seamlessly into most application in < 5 mins.
-
-## 🛣️ Architecture
-
-![enter image description here](https://i.imgur.com/wzU5fUO.png)
+Knowing when/where things break is very critical. Testing is the way to know that. But it's currently too hard and frustrating, we're trying to change it :D.
 
 
-## 🧱 Self deployment OSS
+## 🧱 Deployment
 
 |                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
 | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
+| <div style=""> ☁️ Crusher cloud </div> | [Start using](https://app.crusher.dev) |                            |
+| <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="12px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
+
+## 📝 Docs & Community
+|                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
+| :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
+| <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Crusher cloud </div> | [Start using](https://app.crusher.dev) |                            |
 | <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
 
-### 📝 License
 
-<hr/>
-This repo is entirely MIT licensed, except the **/src_ee directory (if applicable).
-EE features (contained in the src_ee directory) require a Crusher license. Contact us at [contact@crusher.dev](mailto:sales@crusher.dev) for more information.
+##### 📝 License
 
-## 🤝 Contributors
-
-<hr/>
-<p float="left">
-
-<img src="https://avatars.githubusercontent.com/u/6849438?v=4" height="56" style="margin: 4px;"/> &nbsp;<img src="https://avatars.githubusercontent.com/u/16796008?v=4" height="56" style="margin: 4px;"/> &nbsp;<img src="https://avatars.githubusercontent.com/u/51117080?v=4" height="56" style="margin: 4px;"/>&nbsp;<img src="https://avatars.githubusercontent.com/u/55053424?v=4" height="56" style="margin: 4px;"/>
-
-</p>
+This repo is entirely MIT licensed, except the **/src_ee directory (if applicable)**. Read more.
