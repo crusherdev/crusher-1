@@ -1,8 +1,8 @@
 <br/>
 <div align="center">
 <img src="https://i.imgur.com/Z6wyajH.png" height="36" style="margin: 0 auto;"/>
-<h3 align="center" >Ship the best version of your website</h3>
-<div>A next-gen web testing for devs and testers 🔥🔥 </div><br/>
+<h3 align="center" >Test & ship with using low-code</h3>
+<div>Create and run test in one command</div><br/>
 
 
 </div>
