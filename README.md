@@ -21,11 +21,9 @@
 
 https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
-Crusher is complete, batteries included testing framework. Create your first in < 2 mins, either using low-code or coding using SDK.
+Crusher is complete, batteries included testing framework. It's better alternative to selenium, cypress, pupetter, etc.
 
-Install, integrate and run tests. We use javascript + reverse engineer low of framework to make testing easy :). 
-
-Our motto: Testing shouldn't be frustrating and boring. 
+Create your first in < 2 mins, either using low-code or coding using SDK. Install, integrate and run tests using single platform.
 
 
 ## 🚀 Start using Crusher
