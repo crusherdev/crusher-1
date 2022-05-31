@@ -6,6 +6,16 @@
 
 
 </div>
+<div align="center">
+<h4> Show some :heart: and star the repo to support the project</h4>
+</div>
+
+<div align="center">
+  <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star"/>  
+    <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork"/>
+     <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch"/>
+</div>
+<br/>
 
 https://user-images.githubusercontent.com/118367/151245587-892e50a6-41f5-4b74-9786-fe3566f6b1fb.mp4
 
