@@ -7,7 +7,7 @@
 
 </div>
 <div align="center">
-<h4> Start to get updates and support project :heart: </h4>
+<h4> Star to get updates and support project :heart: </h4>
 </div>
 
 <div align="center">
