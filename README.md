@@ -2,12 +2,10 @@
 <div align="center">
 <img src="https://i.imgur.com/Z6wyajH.png" height="28" style="margin: 0 auto;"/>
 <h3 align="center" >Create tests and run  instantly using low-code</h3>
-<div>Testing for developers by developers</div><br/>
-
 
 </div>
 <div align="center">
-<h4> Star to get updates and support project :heart: </h4>
+<h4> Star repo support project and get updates :heart: </h4>
 </div>
 
 <div align="center">
