@@ -5,7 +5,7 @@
 
 </div>
 <div align="center">
-<h4> Star repo support project and get updates :heart: </h4>
+<h5> Star repo support project and get updates :heart: </h5>
 </div>
 
 <div align="center">
