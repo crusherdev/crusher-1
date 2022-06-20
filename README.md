@@ -6,9 +6,9 @@
 
 <h1> Crusher</h1>
 
-[Crusher](https://crusher.dev) is an open source testing framework. We're a building better alternative to cypress, selenium, etc.
+[Crusher](https://crusher.dev) is a faster  testing framework, alternative to traditional workflows using cypress, selenium, etc.
 
-Create test in < 2 mins, either using low-code or code. Install, integrate and Run in single platform.
+**Create test in < 2 mins, either using low-code or code**. Install, integrate and run in single platform, batteries included.
 
 Crush your bugs before they crash your users.
 
