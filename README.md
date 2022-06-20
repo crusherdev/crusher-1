@@ -1,29 +1,32 @@
-<br/>
-<div align="center">
-<img src="https://i.imgur.com/Z6wyajH.png" height="28" style="margin: 0 auto;"/>
-<h3 align="center" >Create tests and run  instantly using low-code</h3>
+<p align="center">
+<img src="https://i.imgur.com/Z6wyajH.png" height="32" style="margin: 0 auto;"/>
+</p>
 
-</div>
-<div align="center">
-<h5> Star repo support project and get updates :heart: </h5>
-</div>
+<hr/>
 
-<div align="center">
-  <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star"/>  
-    <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork"/>
-     <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch"/>
-</div>
-<br/>
+<h1> Crusher</h1>
 
+[Crusher](https://crusher.dev) is an open source testing framework. We're a building better alternative to cypress, selenium, etc.
+
+Create test in < 2 mins, either using low-code or code. Install, integrate and Run in single platform.
+
+Crush your bugs before they crash your users.
 
 
 https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
-Crusher is complete, batteries included testing framework. It's better alternative to selenium, cypress, pupetter, etc.
+<div>
+<h5> Star repo to support project and get updates :heart: </h5>
+</div>
 
-Create your first in < 2 mins, either using low-code. Install, integrate and run tests using single platform.
+<div>
+  <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="24"/>  
+    <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork" height="24"/>
+     <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch" height="24"/>
+</div>
+<br/>
 
-You can also create test using code with playwright :D.
+
 
 ## 🚀 Start using Crusher
 
@@ -48,7 +51,7 @@ Or see docs for other methods
   <tbody>
     <tr>
       <td>
-        <h3>Advantages</h3>
+        <h3>Feature</h3>
       </td>
       <td>
         <h3>Use Cases</h3>
@@ -82,7 +85,7 @@ Or see docs for other methods
 - E2E testing solution that makes testing less frustration.
 - Monitor production. Integrate with Github, slack, etc.
 - Dashboard for team workflow.
-- + lot more. And build top on crusher for advance features.
+- lot more. And build top on crusher for advance features.
 
 If you face bug/feature request, please file a new issue :D.
 
