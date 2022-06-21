@@ -36,7 +36,14 @@
 
 **Create, run and debug tests** with dead simple workflow, use **low-code or code**. We're reimagining testing to make it blazingly simple, fast and effective.
 
-<img src="https://i.imgur.com/nqE0S1B.png"/>
+
+  <a href="https://strapi.io/#gh-light-mode-only">
+  <img src="https://i.imgur.com/nqE0S1B.png"/>
+  </a>
+  <a href="https://strapi.io/#gh-dark-mode-only">
+    <img src="https://i.imgur.com/qQ2uda9.png"  />
+  </a>
+
 
 <div>
 <h5  align="center"> Star repo to support project and get updates :heart: </h5>
