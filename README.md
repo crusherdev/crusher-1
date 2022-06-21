@@ -92,14 +92,16 @@ Docs - Self host, API reference, etc.
 
 ## 💡 Philosophy
 
-Softwares has evolved a lot in last 10 years, testing hasn't. The experience of testing your software is bad & frustrating.
+If you are involved in software development, you must know what happens when things goes wrong. 
 
-Knowing when things break, preventing it crucial. We're changing it by upgrading your testing experience. 
+It seems like every time you push a button, something breaks. This makes us so frustrated that we don't want to push the buttons anymore.
+
+Testing solves this, but it hasn't evolved. We're changing it by creating integrate solution that simply works :D.
 
 
 ## 🧱 Deployment
 
-**Crusher cloud 🏖️** - Zero configuration setup. Recommended: Faster, cheaper and less hassle.
+**Crusher cloud 🏖️** Start using |  Zero configuration setup. Recommended: Faster, cheaper and less hassle.
 
 **Self host 🧱** - Deploy using docker or kubernetes. 
 
