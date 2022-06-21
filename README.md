@@ -6,7 +6,7 @@
 
 <h1> Crusher</h1>
 
-[Crusher](https://crusher.dev) is a faster  testing framework, alternative to traditional workflows using cypress, selenium, etc.
+[Crusher](https://crusher.dev) is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
 **Create test in < 2 mins, either using low-code or code**. Install, integrate and run in single platform, batteries included.
 
@@ -43,7 +43,7 @@ npx crusher-cli
 npx crusher-cli test:run
 ```
 
-Or see docs for other methods
+Docs - Self host, API reference, etc.
 
 ## 🔮 Features
 
@@ -51,10 +51,10 @@ Or see docs for other methods
   <tbody>
     <tr>
       <td>
-        <h3>Feature</h3>
+        <h5>Feature</h5>
       </td>
       <td>
-        <h3>Use Cases</h3>
+        <h5>Use Cases</h5>
       </td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@ Or see docs for other methods
             <li>🦁 Create test using <strong>low-code</strong> or  <strong>code</strong></li>
           <li>🦁 Run test on <strong>multiple browsers</strong></li>
           <li>📦 Integrated battery included tools</li>
-          <li>⚡ Powered by <strong>Javascript</strong> and new APIS</li>
+          <li>⚡ Powered by <strong>Javascript</strong> and playwright at core</li>
           <li>🛠️ Extendable platform, github/slack support integration</li>
         </ul>
       </td>
@@ -79,26 +79,18 @@ Or see docs for other methods
   </tbody>
 </table>
 
-- Run test on multiple browsers.
-- Create test with low-code/code.
-- Self host crusher on your infra. 
-- E2E testing solution that makes testing less frustration.
-- Monitor production. Integrate with Github, slack, etc.
-- Dashboard for team workflow.
-- lot more. And build top on crusher for advance features.
-
-If you face bug/feature request, please file a new issue :D.
+=> much more. See features list for more.
 
 ## 💡 Philosophy
 
-Softwares are getting more complex, we are entering API driven ecosystem.
+Softwares has evolved a lot in last 10 years, testing hasn't. The experience of testing your software is bad & frustrating.
 
-This leads to angry customers, stakeholder and your product/startup becomes chaotic which could be avoided easily.
-
-Knowing when/where things break is very critical. Testing is the way to know that. But it's currently too hard and frustrating, we're trying to change it :D.
+Knowing when things break, preventing it crucial. We're changing it by upgrading your testing experience. 
 
 
 ## 🧱 Deployment
+
+Want to self host? No problem. 
 
 |                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
 | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
@@ -112,6 +104,10 @@ Knowing when/where things break is very critical. Testing is the way to know tha
 | <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
 
 
+
+## Contributing & Getting involved
+
+
 ## Resources & Contributing Back
 
 Looking for the docs? Check the [documentation](https://millionjs.org) out.
@@ -122,6 +118,6 @@ Have a question about Crusher? Post it on the [Discord](https://discord.gg/X9yFb
 
 Find a bug? Head over to our [issue tracker](https://github.com/aidenybai/million/issues) and we'll do our best to help. We love pull requests, too!
 
-##### 📝 License
+### 📝 License
 
-This repo is entirely MIT licensed, except the **/src_ee directory (if applicable)**. Read more.
+This repo is entirely MIT licensed, except the **/src_ee directory (if applicable)**.
