@@ -1,10 +1,14 @@
 <p align="center">
-<img src="https://i.imgur.com/Z6wyajH.png" height="32" style="margin: 0 auto;"/>
+  <p align="center">
+  <a href="https://strapi.io/#gh-light-mode-only">
+    <img src="https://i.imgur.com/EhNlMyB.png" width="220px" alt="Strapi logo" />
+  </a>
+  <a href="https://strapi.io/#gh-dark-mode-only">
+    <img src="https://i.imgur.com/AAjf4pL.png"  width="220px" alt="Strapi logo" />
+  </a>
+</p>
 </p>
 
-<hr/>
-
-<h1> Crusher</h1>
 
 [Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
