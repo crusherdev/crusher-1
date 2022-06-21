@@ -10,6 +10,11 @@
 </p>
 
 
+<h3 align="center">Test more & fast with low-code</h3>
+<p align="center">Open-source testing framework to test with no effort.</p>
+<p align="center"><a href="https://strapi.io/demo">Try live demo</a> | <a href="https://strapi.io/demo">Docs</a></p>
+<br />
+
 [Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
 **Create test in < 2 mins, either using low-code or code**. Install, integrate and run in single platform, batteries included.
