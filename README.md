@@ -36,7 +36,7 @@
 
 **Create, run and debug tests** with dead simple workflow, use **low-code or code**. We're reimagining testing to make it blazingly simple, fast and effective.
 
-https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
+<img src="https://i.imgur.com/qQ2uda9.png"/>
 
 <div>
 <h5  align="center"> Star repo to support project and get updates :heart: </h5>
