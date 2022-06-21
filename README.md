@@ -91,12 +91,12 @@ Knowing when things break, preventing it crucial. We're changing it by upgrading
 
 ## 🧱 Deployment
 
-Want to self host? No problem. 
+**Crusher cloud 🏖️** - Zero configuration setup. Recommended: Faster, cheaper and less hassle.
 
-|                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
-| :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
-| <div style=""> ☁️ Crusher cloud </div> | [Start using](https://app.crusher.dev) |                            |
-| <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="12px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
+**Self host 🧱** - Deploy using docker or kubernetes. 
+
+Read docs on how to deploy locally, or on AWS, GCP, etc..
+
 
 ## 📝 Docs & Community
 |                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
