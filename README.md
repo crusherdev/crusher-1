@@ -4,9 +4,9 @@
 
 <hr/>
 
-<h1> Crusher</h1>
+<h1>  C <img style="width: 30px;transform: scaleX(-1);margin-left: -12px;margin-right: -6px;background: transparent;position: relative;top: 1px;" src="https://cdnb.artstation.com/p/assets/images/images/022/733/993/original/ivan-maranan-dino-dance.gif?1576511962">usher</h1>
 
-[Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
+[Crusher](https://crusher.dev) is a faster testing framework, an alternative to traditional workflows buily with cypress, selenium, etc.
 
 **Create test in < 2 mins, either using low-code or code**. Install, integrate and run in single platform, batteries included.
 
