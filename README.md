@@ -6,7 +6,7 @@
 
 <h1> Crusher</h1>
 
-[Crusher](https://crusher.dev) is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
+[Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
 **Create test in < 2 mins, either using low-code or code**. Install, integrate and run in single platform, batteries included.
 
@@ -61,9 +61,10 @@ Docs - Self host, API reference, etc.
       <td>
         <ul>
             <li>🦁 Create test using <strong>low-code</strong> or  <strong>code</strong></li>
-          <li>🦁 Run test on <strong>multiple browsers</strong></li>
+          <li>🌱 Run test on <strong>multiple browsers</strong></li>
           <li>📦 Integrated battery included tools</li>
           <li>⚡ Powered by <strong>Javascript</strong> and playwright at core</li>
+          <li>🪛 Built in report + infra support</li>
           <li>🛠️ Extendable platform, github/slack support integration</li>
         </ul>
       </td>
