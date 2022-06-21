@@ -47,11 +47,13 @@ https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9
     <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork" height="24"/>
      <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch" height="24"/>
 </div>
+
+
 <br/>
 
 
 
-## 🚀 Start using Crusher
+## 🚀 Getting started
 
 **Create your first test**
 
@@ -103,6 +105,15 @@ npx crusher-cli test:run
 </table>
 
 => much more. See features list for more.
+
+
+- **Create test using low-code:** Elegant, entirely customizable and a fully extensible admin panel.
+- **Secure by default:** Reusable policies, CORS, CSP, P3P, Xframe, XSS, and more.
+- **Plugins Oriented:** Install the auth system, content management, custom plugins, and more, in seconds.
+- **Blazing Fast:** Built on top of Node.js, Strapi delivers amazing performance.
+- **Front-end Agnostic:** Use any front-end framework (React, Vue, Angular, etc.), mobile apps or even IoT.
+- **Powerful CLI:** Scaffold projects and APIs on the fly.
+- **SQL databases:** Works with PostgreSQL, MySQL, MariaDB, and SQLite.
 
 ## 💡 Philosophy
 
