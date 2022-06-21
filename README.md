@@ -24,10 +24,10 @@ Crush bugs before they crash your users. Play the demo
 https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
 <div>
-<h5> Star repo to support project and get updates :heart: </h5>
+<h5  align="center"> Star repo to support project and get updates :heart: </h5>
 </div>
 
-<div>
+<div align="center">
   <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="24"/>  
     <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork" height="24"/>
      <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch" height="24"/>
@@ -51,7 +51,6 @@ npx crusher-cli
 npx crusher-cli test:run
 ```
 
-Docs - Self host, API reference, etc.
 
 ## 🦖 Features
 
