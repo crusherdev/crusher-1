@@ -53,7 +53,7 @@ npx crusher-cli test:run
 
 Docs - Self host, API reference, etc.
 
-## 🔮 Features
+## 🦖 Features
 
 <table>
   <tbody>
