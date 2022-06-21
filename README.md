@@ -107,7 +107,7 @@ npx crusher-cli test:run
 => much more. See features list for more.
 
 
-- **Create test using low-code:** Elegant, entirely customizable and a fully extensible admin panel.
+- 🦁 **Create test using low-code:** Elegant, entirely customizable and a fully extensible admin panel.
 - **Secure by default:** Reusable policies, CORS, CSP, P3P, Xframe, XSS, and more.
 - **Plugins Oriented:** Install the auth system, content management, custom plugins, and more, in seconds.
 - **Blazing Fast:** Built on top of Node.js, Strapi delivers amazing performance.
