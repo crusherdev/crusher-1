@@ -17,9 +17,9 @@
 
 [Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
-**Create, run and debug tests** with dead simple workflow, use low-code or code. We're reimaginging testing with only framework you'll ever need.
+**Create, run and debug tests** with dead simple workflow, use **low-code or code**. We're reimagining testing to make it blazingly simple, fast and effective.
 
-Crush bugs before they crash your users.
+Crush bugs before they crash your users. Play the demo
 
 https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
