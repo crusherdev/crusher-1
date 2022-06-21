@@ -17,9 +17,6 @@
   <table>
     <tbody>
       <tr>
-        <td>
-          <a href="https://www.youtube.com/watch?v=KgnSM9NbV2s"> <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="22"/>  </a>
-        </td>
          <td>
           <a href="#-start-using-crusher">⌛ Try Crusher</a>
         </td>
