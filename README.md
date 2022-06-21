@@ -12,14 +12,32 @@
 
 <h3 align="center">Test more & fast with low-code</h3>
 <p align="center">Open-source testing framework to test with no effort.</p>
-<p align="center"><a href="https://strapi.io/demo">Try Crusher</a> | <a href="https://strapi.io/demo">Docs</a></p>
+
+<div align="center">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=KgnSM9NbV2s"> <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="22"/>  </a>
+        </td>
+         <td>
+          <a href="#-start-using-crusher">⌛ Try Crusher</a>
+        </td>
+        <td>
+          <a href="https://millionjs.org">📚 Docs</a>
+        </td>
+        <td>
+          <a href="https://discord.gg/X9yFbcV2rF">💬 Join our Discord</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 <br />
 
 [Crusher](https://crusher.dev) 🦖 is a faster  testing framework, an alternative to traditional workflows using cypress, selenium, etc.
 
 **Create, run and debug tests** with dead simple workflow, use **low-code or code**. We're reimagining testing to make it blazingly simple, fast and effective.
-
-Crush bugs before they crash your users. Play the demo
 
 https://user-images.githubusercontent.com/6849438/171300644-fc108ad3-1810-44cb-9535-7bf5665347c6.mp4
 
