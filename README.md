@@ -90,12 +90,14 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 - 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
  much more. See features list for more.
 
+Crusher uses playwright as base, and gives you best developer experience you need for testing. We're building toolkit to upgrade testing experience, we focus heavily on engineering + product side.
+
 ## 🏃 Use cases
-- 🏃 **Test user flows** Create test using custom recorder based off on chromium.
-- 💅 **Test UI of your project:** Better APIs, use native playwright APIs.
-- ☕️ **Run test locally** No more execution on selenium grid.
-- 🍄 **Test with each commit** Run test on chromium, safari, firefox in seconds :D.
-- ✅ **Monitor production** Built on top of Playwright, Crusher delivers amazing performance of testing.
+- **Test user flows** Create test using custom recorder based off on chromium.
+-  **Test UI of your project:** Better APIs, use native playwright APIs.
+- **Run test locally** No more execution on selenium grid.
+- **Test with each commit** Run test on chromium, safari, firefox in seconds :D.
+- **Monitor production** Built on top of Playwright, Crusher delivers amazing performance of testing.
 
 
 ## 💡 Philosophy
@@ -132,5 +134,5 @@ For general help using Crusher, please refer to [the official Strapi documentati
 - Found a bug? File an issue.
 - Wanna help. We love pull requests, too!
 
-### 📝 License
+## 📝 License
 This repo is entirely MIT licensed, except the **/src_ee directory (if applicable)**.
