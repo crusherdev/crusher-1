@@ -85,7 +85,7 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 - 🔥 **Fast test execution** No more execution on selenium grid.
 - 🔋 **All major browser supported:** Run test on chromium, safari, firefox in seconds :D.
 - ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers amazing performance of testing.
-- - 👏 **Integrate in your project with CLI:** Use npx base CLI to integrate.
+- 👏 **Integrate in your project with CLI:** Use npx base CLI to integrate.
 - 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.) or backend.
 - 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
 + much more. See features list for more.
