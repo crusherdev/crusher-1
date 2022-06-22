@@ -122,7 +122,7 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 - 🔋 **All major browser supported:** Run test on chromium, safari, firefox in seconds :D.
 - ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers amazing performance of testing.
 - 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.), mobile apps or even IoT.
-- **Powerful CLI:** Run and c.
+- 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
 - **SQL databases:** Works with PostgreSQL, MySQL, MariaDB, and SQLite.
 
 ## 💡 Philosophy
