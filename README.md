@@ -88,7 +88,7 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 - 👏 **Integrate in your project with CLI:** Use npx base CLI to integrate.
 - 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.) or backend.
 - 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
-+ much more. See features list for more.
+ much more. See features list for more.
 
 ## 🏃 Use cases
 - 🏃 **Test user flows** Create test using custom recorder based off on chromium.
