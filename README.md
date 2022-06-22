@@ -1,10 +1,10 @@
 <p align="center">
   <p align="center">
-  <a href="https://strapi.io/#gh-light-mode-only">
-    <img src="https://i.imgur.com/EhNlMyB.png" width="220px" alt="Strapi logo" />
+  <a href="https://crusher.dev/#gh-light-mode-only">
+    <img src="https://i.imgur.com/EhNlMyB.png" width="220px" alt="Crusher logo" />
   </a>
-  <a href="https://strapi.io/#gh-dark-mode-only">
-    <img src="https://i.imgur.com/AAjf4pL.png"  width="220px" alt="Strapi logo" />
+  <a href="https://crusher.dev/#gh-dark-mode-only">
+    <img src="https://i.imgur.com/AAjf4pL.png"  width="220px" alt="Crusher logo" />
   </a>
 </p>
 </p>
@@ -37,10 +37,10 @@
 **Create, run and debug tests** with dead simple workflow, use **low-code or code**. We're reimagining testing to make it blazingly simple, fast and effective.
 
 
-  <a href="https://strapi.io/#gh-light-mode-only">
+  <a href="https://crusher.dev/#gh-light-mode-only">
   <img src="https://i.imgur.com/nqE0S1B.png"/>
   </a>
-  <a href="https://strapi.io/#gh-dark-mode-only">
+  <a href="https://crusher.dev/#gh-dark-mode-only">
     <img src="https://i.imgur.com/qQ2uda9.png"  />
   </a>
 
@@ -62,7 +62,7 @@
 
 ## 🚀 Getting started
 
-Read the Getting Started tutorial or follow the steps below:
+Read the [Getting Started](https://docs.crusher.dev/getting-started/what-is-crusher) tutorial or follow the steps below:
 
 **Create your first test**
 
@@ -72,7 +72,7 @@ In your git repo run,
 npx crusher-cli
 ```
 
-You can use recorder to create test. Or write code using CrusherSDK.
+You can use our recorder to create tests or if you're feeling adventurous try writing tests using code with our CrusherSDK.
 
 **Run test**
 
@@ -84,64 +84,58 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 
 
 ## 🦖 Features
-- 🏆 **Create test using low-code:** Create test using custom recorder based off on chromium.
-- 📝 **Write test using code:** Better APIs, use native playwright APIs.
-- 🔥 **Fast test execution** No more execution on selenium grid.
-- 🔋 **All major browser supported:** Run test on chromium, safari, firefox in seconds :D.
-- ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers amazing performance of testing.
-- 👏 **Integrate in your project with CLI:** Use npx base CLI to integrate.
-- 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.) or backend.
-- 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
- much more. See features list for more.
+- 🏆 **Create tests using low-code:** Create tests using our customized recorder based on chromium.
+- 📝 **Write tests using code:** Better APIs and more control with native playwright APIs.
+- 🔥 **Fast test execution:** No more execution on selenium grid.
+- 🔋 **All major browsers supported:** Run tests on chromium, safari, and firefox in seconds.
+- ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers an amazing performance during execution.
+- 👏 **Easy integration with your projects:** Use npx base CLI to integrate.
+- 🦄 **Central reporting & dashboard:** See how your app is doing overall anytime-anywhere.
+- 👨‍💻 **Built for developers:** Use modern javascript to write tests with dead-simple workflow.
 
-Crusher uses playwright as base, and gives you best developer experience you need for testing. We're building toolkit to upgrade testing experience, we focus heavily on engineering + product side.
+Crusher is built on playwright as the base to give you the best developer experience you need for testing. We're building a customized toolkit to upgrade the testing experience, by focusing heavily on the engineering + product side.
 
 ## 🏃 Use cases
-- **Test user flows** Create test using custom recorder based off on chromium.
--  **Test UI of your project:** Better APIs, use native playwright APIs.
-- **Run test locally** No more execution on selenium grid.
-- **Test with each commit** Run test on chromium, safari, firefox in seconds :D.
-- **Monitor production** Built on top of Playwright, Crusher delivers amazing performance of testing.
+- **Test e2e user flows:** Never compromise your user experience by testing important end-to-end user flows.
+- **Test UI of your project:** Never let a UI change catch you off guard.
+- **Run tests locally:** Test specific functionalities of your app easily with a single click.
+- **Test with every commit:** Run tests on every commit and add checks on pull requests.
+- **Monitor production:** Periodically run tests for your website and get notified if something goes wrong.
 
 
 ## 💡 Philosophy
+If you are involved in software development, you are no stranger to things breaking now and then. Sometimes it's because of a small typo/change, and sometimes because of reasons out of your control.
 
-If you are involved in software development, you must know what happens when things goes wrong. 
+It seems like every time you are changing something, there is a chance that something else might break.  The worst part is you have no idea what went wrong until it goes into production and someone reports it.
 
-It seems like every time you push a button, something breaks. This makes us so frustrated that we don't want to push the buttons anymore.
-
-Testing solves this, but it hasn't evolved. We're changing it by creating integrate solution that simply works.
-
+Testing solves this, but it hasn't evolved. We're changing it by creating an integrated solution that simply works.
 
 ## 🧱 Deployment
 
-**Crusher cloud 🏖️** Start using |  Zero configuration setup. Recommended: Faster, cheaper and less hassle.
+**Crusher cloud:** 🏖️ Start using |  Zero configuration setup. (Recommended: Faster, cheaper and less hassle)
 
-**Self host 🧱** - Deploy using docker or kubernetes. 
-
-Read docs on how to deploy locally, or on AWS, GCP, etc.
+**Self host:** 🧱 Deploy using Docker or Kubernetes. [Docs](https://docs.crusher.dev/development/docker-deploy-locally)
 
 
 ## FAQs
-- **I don't know testing, Can I use Crusher?** Yes, we primarily desinged crusher to make testing testing.
-- **Low-code ain't powerful? I believe in code supremacy** Fair enough, you can write code too. We might support other top frameworks later on.
-- **Why this over use selenium, cypress, etc?** With any library you need to setup workflow. We're creating that for you.
-- **Why new framework?** Testing has not evolved. We still have old flaky APIs that don't work.
-- **Is crusher using electron?** We need to use chromium as recorder and also to run test locally. We modify v8, blink to create our own APIs.
+- **I don't have any prior experience, Can I use Crusher?** Yes, we primarily designed crusher to make testing easy.
+- **Low-code ain't powerful? I believe in code supremacy:** Fair enough, you can write code too. We might support other top frameworks later on.
+- **Why this over selenium, cypress, etc?** With any library, you'll have to spend a lot of time setting up testing workflow. We take care of all the for you.
+- **Why the new framework?** Testing has not evolved. We still have old flaky APIs that don't work.
+- **Is crusher using electron?** We need to use chromium to build the recorder and also to run tests locally. We also modify V8 and Blink to make the recorder more powerful.
 
 ## Resources & Getting involved
 
-View our documentation live:
-- [Developer docs](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
-- [User guide](https://docs.strapi.io/user-docs/latest/getting-started/introduction.html)
+Check out our live documentation:
+- [Getting Started](https://docs.crusher.dev/getting-started/create-your-first-test)
+- [Developing locally](https://docs.crusher.dev/development/setting-up-development-env)
 
-For general help using Crusher, please refer to [the official Strapi documentation](https://docs.crusher.dev).
+For general help using Crusher, please refer to [the official documentation](https://docs.crusher.dev).
 - [GitHub](https://github.com/crusherdev/crusher) (Bug reports, Contributions)
 - support@crusher.dev
 
 ##  Contribute to Crusher
-- Setup Crusher locally. Read
-- Update documentation. Here are the idea.
+- Setup Crusher locally. [Docs](https://docs.crusher.dev/development/setting-up-development-env)
 - Found a bug? File an issue.
 - Wanna help. We love pull requests, too!
 
