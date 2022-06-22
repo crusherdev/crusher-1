@@ -62,7 +62,11 @@
 
 ## 🚀 Getting started
 
+Read the Getting Started tutorial or follow the steps below:
+
 **Create your first test**
+
+In your git repo run,
 
 ```
 npx crusher-cli
