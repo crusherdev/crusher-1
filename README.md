@@ -68,7 +68,7 @@
 npx crusher-cli
 ```
 
-You can use recorder to create test. + You can also create test using 
+You can use recorder to create test. Or write code using CrusherSDK.
 
 **Run test**
 
