@@ -68,12 +68,15 @@
 npx crusher-cli
 ```
 
+You can use recorder to create test. + You can also create test using 
 
 **Run test**
 
 ```
 npx crusher-cli test:run
 ```
+
+You can run test locally on your machine to debug. Run it on cloud to see faster execution.
 
 
 ## 🦖 Features
@@ -114,12 +117,12 @@ npx crusher-cli test:run
 => much more. See features list for more.
 
 
-- 🦁 **Create test using low-code:** Elegant, entirely customizable and a fully extensible admin panel.
-- **Secure by default:** Reusable policies, CORS, CSP, P3P, Xframe, XSS, and more.
-- **Plugins Oriented:** Install the auth system, content management, custom plugins, and more, in seconds.
-- **Blazing Fast:** Built on top of Node.js, Strapi delivers amazing performance.
-- **Front-end Agnostic:** Use any front-end framework (React, Vue, Angular, etc.), mobile apps or even IoT.
-- **Powerful CLI:** Scaffold projects and APIs on the fly.
+- 🏆 **Create test using low-code:** Create test using custom recorder based off on chromium.
+- 📝 **Write test using code:** Better APIs, use native playwright APIs.
+- 🔋 **All major browser supported:** Run test on chromium, safari, firefox in seconds :D.
+- ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers amazing performance of testing.
+- 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.), mobile apps or even IoT.
+- **Powerful CLI:** Run and c.
 - **SQL databases:** Works with PostgreSQL, MySQL, MariaDB, and SQLite.
 
 ## 💡 Philosophy
@@ -137,30 +140,24 @@ Testing solves this, but it hasn't evolved. We're changing it by creating integr
 
 **Self host 🧱** - Deploy using docker or kubernetes. 
 
-Read docs on how to deploy locally, or on AWS, GCP, etc..
+Read docs on how to deploy locally, or on AWS, GCP, etc.
 
 
-## 📝 Docs & Community
-|                                   **Infra provider**                                   |                                **One-click link**                                | **Additional information** |
-| :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------: |
-| <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Crusher cloud </div> | [Start using](https://app.crusher.dev) |                            |
-| <div style=""> <img src="https://i.imgur.com/x2v2EpM.png" height="24px"/>Docker </div> | [Deploy](https://docs.crusher.dev/docs/self-host/how-to-setup-crusher-on-docker) |                            |
+## Resources & Getting involved
 
+View our documentation live:
+- [Developer docs](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
+- [User guide](https://docs.strapi.io/user-docs/latest/getting-started/introduction.html)
 
+For general help using Crusher, please refer to [the official Strapi documentation](https://docs.crusher.dev).
+- [GitHub](https://github.com/crusherdev/crusher) (Bug reports, Contributions)
+- support@crusher.dev
 
-## Contributing & Getting involved
-
-
-## Resources & Contributing Back
-
-Looking for the docs? Check the [documentation](https://millionjs.org) out.
-
-Want to talk to the community? Hop in our [Discord](https://discord.gg/X9yFbcV2rF) and share your ideas and what you've build with Million.
-
-Have a question about Crusher? Post it on the [Discord](https://discord.gg/X9yFbcV2rF) or [GitHub Discussions](https://github.com/aidenybai/million/discussions) and ask the community for help.
-
-Find a bug? Head over to our [issue tracker](https://github.com/aidenybai/million/issues) and we'll do our best to help. We love pull requests, too!
+##  Contribute to Crusher
+- Setup Crusher locally. Read
+- Update documentation. Here are the idea.
+- Found a bug? File an issue.
+- Wanna help. We love pull requests, too!
 
 ### 📝 License
-
 This repo is entirely MIT licensed, except the **/src_ee directory (if applicable)**.
