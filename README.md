@@ -80,50 +80,23 @@ You can run test locally on your machine to debug. Run it on cloud to see faster
 
 
 ## 🦖 Features
-
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <h5>Feature</h5>
-      </td>
-      <td>
-        <h5>Use Cases</h5>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <ul>
-            <li>🦁 Create test using <strong>low-code</strong> or  <strong>code</strong></li>
-          <li>🌱 Run test on <strong>multiple browsers</strong></li>
-          <li>📦 Integrated battery included tools</li>
-          <li>⚡ Powered by <strong>Javascript</strong> and playwright at core</li>
-          <li>🪛 Built in report + infra support</li>
-          <li>🛠️ Extendable platform, github/slack support integration</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li><a href="https://millionjs.org/docs/api/basics/render">Efficiently updating nodes</a></li>
-          <li><a href="https://github.com/aidenybai/hacky">Creating UI libraries</a></li>
-          <li><a href="https://millionjs.org/docs/api/extra/router">Turning MPAs into SPAs</a></li>
-          <li><a href="https://millionjs.org/docs/tooling/ssg-ssr">Use granular HMR updates</a></li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-=> much more. See features list for more.
-
-
 - 🏆 **Create test using low-code:** Create test using custom recorder based off on chromium.
 - 📝 **Write test using code:** Better APIs, use native playwright APIs.
+- 🔥 **Fast test execution** No more execution on selenium grid.
 - 🔋 **All major browser supported:** Run test on chromium, safari, firefox in seconds :D.
 - ⚡ **Blazing Fast:** Built on top of Playwright, Crusher delivers amazing performance of testing.
-- 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.), mobile apps or even IoT.
+- - 👏 **Integrate in your project with CLI:** Use npx base CLI to integrate.
+- 🦄 **Central reporting & dashboard:** Use any front-end framework (React, Vue, Angular, etc.) or backend.
 - 👨‍💻 **Built for developers:** Use modern javascript to write test :D.
-- **SQL databases:** Works with PostgreSQL, MySQL, MariaDB, and SQLite.
++ much more. See features list for more.
+
+## 🏃 Use cases
+- 🏃 **Test user flows** Create test using custom recorder based off on chromium.
+- 💅 **Test UI of your project:** Better APIs, use native playwright APIs.
+- ☕️ **Run test locally** No more execution on selenium grid.
+- 🍄 **Test with each commit** Run test on chromium, safari, firefox in seconds :D.
+- ✅ **Monitor production** Built on top of Playwright, Crusher delivers amazing performance of testing.
+
 
 ## 💡 Philosophy
 
