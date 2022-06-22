@@ -127,7 +127,7 @@ Read docs on how to deploy locally, or on AWS, GCP, etc.
 - **Low-code ain't powerful? I believe in code supremacy** Fair enough, you can write code too. We might support other top frameworks later on.
 - **Why this over use selenium, cypress, etc?** With any library you need to setup workflow. We're creating that for you.
 - **Why new framework?** Testing has not evolved. We still have old flaky APIs that don't work.
-- **Is crusher using electron?** We need to use chromium as recorder and also to run test locally. We modify v8, blink to create our own APIs.
+- **Is crusher using electron?** We need to use chromium as recorder and also to run test locally. We modify v8, blink to create our own APIs. Crusher binary is not exposed due to limitation of developing on it.
 
 ## Resources & Getting involved
 
