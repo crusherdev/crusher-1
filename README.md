@@ -21,10 +21,7 @@
           <a href="#-start-using-crusher">⌛ Try Crusher</a>
         </td>
         <td>
-          <a href="https://millionjs.org">📚 Docs</a>
-        </td>
-        <td>
-          <a href="https://discord.gg/X9yFbcV2rF">💬 Join our Discord</a>
+          <a href="https://docs.crusher.dev">📚 Docs</a>
         </td>
       </tr>
     </tbody>
