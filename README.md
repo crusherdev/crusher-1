@@ -46,7 +46,7 @@
 
 
 <div>
-<h5  align="center"> Star repo to support project and get updates :heart: </h5>
+<h5  align="center"> Star repo to support us and get updates :heart: </h5>
 </div>
 
 <div align="center">
@@ -104,7 +104,7 @@ If you are involved in software development, you must know what happens when thi
 
 It seems like every time you push a button, something breaks. This makes us so frustrated that we don't want to push the buttons anymore.
 
-Testing solves this, but it hasn't evolved. We're changing it by creating integrate solution that simply works :D.
+Testing solves this, but it hasn't evolved. We're changing it by creating integrate solution that simply works.
 
 
 ## 🧱 Deployment
