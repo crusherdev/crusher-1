@@ -24,7 +24,7 @@ jobs:
         run: cp ecosystem.config.sample.js ecosystem.config.js && cp .env.sample .env
 
       - name: User yarn v3.0
-        run: yarn set version beryy
+        run: yarn set version berry
 
       - name: Install crusher modules
         run: yarn
