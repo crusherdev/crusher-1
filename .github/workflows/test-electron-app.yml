@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v3.3.0 
         with:
           node-version: 16.13.2
           cache: 'yarn'
@@ -32,9 +32,9 @@ jobs:
       - name: Setup crusher for prod
         run: yarn setup:prod
 
-      - name: Build electron app
-        run: BACKEND_URL=https://backend.crusher.dev FRONTEND_URL=https://app.crusher.dev yarn workspace electron-app build
+      # - name: Build electron app
+      #   run: BACKEND_URL=https://backend.crusher.dev FRONTEND_URL=https://app.crusher.dev yarn workspace electron-app build
 
-      - name: 'Run tests for electron app'
-        run: |
-          yarn workspace electron-app tests
+      # - name: 'Run tests for electron app'
+      #   run: |
+      #     yarn workspace electron-app tests
