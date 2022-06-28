@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-    <a href="https://docs.crusher.dev/docs/download">Download</a> ·
+    <a href="https://docs.crusher.dev/docs/download">Downlosad</a> ·
     <a href="#-start-using-crusher">Install & Use</a> ·
     <a href="https://docs.crusher.dev">Documentation</a> ·
 </p>
