@@ -23,11 +23,14 @@ jobs:
           node-version: 16.13.2
           cache: 'yarn'
 
-      # - name: Create ecosystem.config.js and Copy .env.sample file
-      #   run: cp ecosystem.config.sample.js ecosystem.config.js && cp .env.sample .env
+      - name: Create ecosystem.config.js and Copy .env.sample file
+        run: cp ecosystem.config.sample.js ecosystem.config.js && cp .env.sample .env
 
-      # - name: Install crusher modules
-      #   run: yarn
+      - name: Setup Node.js environment
+        uses: c-hive/gha-yarn-cache@v2
+
+      - name: Install crusher modules
+        run: yarn
 
       # - name: Setup crusher for prod
       #   run: yarn setup:prod
