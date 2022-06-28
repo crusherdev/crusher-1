@@ -20,7 +20,7 @@
           <a href="#-start-using-crusher">⌛ Try Crusher</a>
         </td>
         <td>
-          <a href="https://docs.crusher.dev">📚 Docs</a>
+          <a href="https://docs.crusher.dev">📚 Docss</a>
         </td>
       </tr>
     </tbody>
@@ -44,7 +44,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="24"/>  
+  <img src="https://img.shields.io/github/stars/crusherdev/crusher.svg?style=social&label=Star" height="24"/>
     <img src="https://img.shields.io/github/forks/crusherdev/crusher.svg?style=social&label=Fork" height="24"/>
      <img src="https://img.shields.io/github/watchers/crusherdev/crusher.svg?style=social&label=Watch" height="24"/>
 </div>
