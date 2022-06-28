@@ -27,7 +27,7 @@ jobs:
       #   uses: c-hive/gha-yarn-cache@v2
 
       - name: Install crusher modules
-        run: yarn
+        run: yarn set version berry && yarn
 
       # - name: Setup crusher for prod
       #   run: yarn setup:prod
