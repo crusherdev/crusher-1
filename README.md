@@ -17,7 +17,7 @@
     <tbody>
       <tr>
          <td>
-          <a href="#-start-using-crusher">⌛ Try Crusher</a>
+          <a href="#-start-using-crusher">⌛ Try Crussher</a>
         </td>
         <td>
           <a href="https://docs.crusher.dev">📚 Docsss</a>
