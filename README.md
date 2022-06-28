@@ -20,7 +20,7 @@
           <a href="#-start-using-crusher">⌛ Try Crussher</a>
         </td>
         <td>
-          <a href="https://docs.crusher.dev">📚 Docs</a>
+          <a href="https://docs.crusher.dev">📚 Docss</a>
         </td>
       </tr>
     </tbody>
