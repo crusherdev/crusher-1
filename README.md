@@ -10,7 +10,7 @@
 </p>
 
 <h3 align="center">Test more & fast with low-code</h3>
-<p align="center">Open-source testing framework to test with no effort.</p>
+<p align="center">Open-source testing cframework to test with no effort.</p>
 
 <div align="center">
   <table>
