@@ -1,5 +1,6 @@
 #This is an example webapp.io configuration for NodeJS
 FROM ubuntu:18.04
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get -y install apt-transport-https ca-certificates curl software-properties-common && \
@@ -27,9 +28,9 @@ WORKDIR crusher
 
 # # RUN mkdir db && curl "$SCHEMA_OBJ_URL" > db/schema.sql
 
-# RUN yarn set version berry
-# RUN yarn install
-# RUN yarn setup:ee
+RUN yarn set version berry
+RUN yarn install
+RUN yarn setup:ee
 
 
 # ENV STANDALONE_APP_URL=https://$GIT_BRANCH.test-app.crusher.dev \
