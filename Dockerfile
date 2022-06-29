@@ -27,6 +27,8 @@ COPY yarn*.lock ./
 
 COPY ./packages/code-generator/package.json ./packages/code-generator/
 COPY ./packages/crusher-app/package.json ./packages/crusher-app/
+COPY ./packages/crusher-app/yarn.lock ./packages/crusher-app/
+COPY ./packages/dyson/yarn.lock ./packages/dyson/
 COPY ./packages/crusher-server/package.json ./packages/crusher-server/
 COPY ./packages/crusher-shared/package.json ./packages/crusher-shared/
 COPY ./packages/dyson/package.json ./packages/dyson/
@@ -35,12 +37,13 @@ COPY ./packages/runner-utils/package.json ./packages/runner-utils/
 COPY ./packages/test-runner/package.json ./packages/test-runner/
 COPY ./packages/unique-selector/package.json ./packages/unique-selector/
 COPY ./packages/video-processor/package.json ./packages/video-processor/
-
+COPY ./scripts ./scripts
+COPY ./patches ./patches
 
 RUN yarn set version berry
 RUN yarn install
 
-COPY . ./crusher
+# COPY . ./crusher
 # RUN cp ./ecosystem.config.sample.js ecosystem.config.js
 # WORKDIR crusher
 
