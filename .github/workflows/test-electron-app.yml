@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Login
-      uses: okteto/login@master
+      uses: okteto/login@main
       with:
         token: "Qr3GlqBiThEa29vSv9H1ucZHbDH8U4saOihi8KyEMJ7avQEa"
 
