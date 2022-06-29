@@ -1,0 +1,7 @@
+services:
+  crusher:
+    build:
+      context: ./
+    scale: 1
+    ports:
+      - 3000:80
