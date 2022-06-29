@@ -49,8 +49,7 @@ RUN cp ./configs/.env.layerci .env
 # RUN node setup/dbMigration.js
 RUN cp ./ecosystem.config.sample.js ecosystem.config.js
 
-
-RUN pm2 start
+CMD ["pm2", "start"]
 
 # # # To wait for server to starts
 
