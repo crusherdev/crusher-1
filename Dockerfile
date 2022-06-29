@@ -1,5 +1,5 @@
 #This is an example webapp.io configuration for NodeJS
-FROM mcr.microsoft.com/playwright:v1.23.0-focal
+FROM ubuntu:18.04
 
 RUN apt-get update && \
     apt-get -y install apt-transport-https ca-certificates curl software-properties-common && \
@@ -20,36 +20,40 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-c
 RUN npm install -g yarn pm2
 RUN apt -y install unzip
 
-COPY . .
 
+COPY . ./crusher
+WORKDIR crusher
 
 
 # # RUN mkdir db && curl "$SCHEMA_OBJ_URL" > db/schema.sql
 
-RUN yarn
-RUN yarn setup:ee
+# RUN yarn set version berry
+# RUN yarn install
+# RUN yarn setup:ee
 
 
-ENV STANDALONE_APP_URL=https://$GIT_BRANCH.test-app.crusher.dev \
-    NEXT_PUBLIC_INTERNAL_BACKEND_URL=https://$GIT_BRANCH.test-app.crusher.dev/server \
-    NEXT_PUBLIC_CRUSHER_MODE=enterprise \
-    CRUSHER_ENV=production \
-    FILE_SERVER_PROXY=https://$GIT_BRANCH.test-app.crusher.dev/output/
+# ENV STANDALONE_APP_URL=https://$GIT_BRANCH.test-app.crusher.dev \
+#     NEXT_PUBLIC_INTERNAL_BACKEND_URL=https://$GIT_BRANCH.test-app.crusher.dev/server \
+#     NEXT_PUBLIC_CRUSHER_MODE=enterprise \
+#     CRUSHER_ENV=production \
+#     FILE_SERVER_PROXY=https://$GIT_BRANCH.test-app.crusher.dev/output/
 
-RUN NEXT_PUBLIC_INTERNAL_BACKEND_URL="$NEXT_PUBLIC_INTERNAL_BACKEND_URL" NODE_OPTIONS=--max-old-space-size=8096 sh scripts/build/build-all.sh
+# RUN NEXT_PUBLIC_INTERNAL_BACKEND_URL="$NEXT_PUBLIC_INTERNAL_BACKEND_URL" NODE_OPTIONS=--max-old-space-size=8096 sh scripts/build/build-all.sh
 
-RUN rm -R packages && mkdir packages && cp -R output/* packages/
+# RUN rm -R packages && mkdir packages && cp -R output/* packages/
 
-# RUN sudo chmod +x /usr/local/bin/docker-compose
-RUN cp ./configs/.env.layerci .env
+# # RUN sudo chmod +x /usr/local/bin/docker-compose
+# RUN cp ./configs/.env.layerci .env
 
-# # Start postgres and redis
-# RUN REPEATABLE STANDALONE_APP_URL="$STANDALONE_APP_URL" docker-compose -f docker/ee/docker-compose.yml up --build -d --force-recreate postgres redis
+# # # Start postgres and redis
+# # RUN REPEATABLE STANDALONE_APP_URL="$STANDALONE_APP_URL" docker-compose -f docker/ee/docker-compose.yml up --build -d --force-recreate postgres redis
 
-# RUN node setup/dbMigration.js
-RUN cp ./ecosystem.config.sample.js ecosystem.config.js
+# # RUN node setup/dbMigration.js
+# RUN cp ./ecosystem.config.sample.js ecosystem.config.js
 
-CMD ["pm2", "start"]
+
+
+CMD tail -f /dev/null
 
 # # # To wait for server to starts
 
