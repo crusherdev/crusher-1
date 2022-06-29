@@ -13,7 +13,7 @@ jobs:
         token: "Qr3GlqBiThEa29vSv9H1ucZHbDH8U4saOihi8KyEMJ7avQEa"
 
     - name: Deploy preview environment
-      uses: okteto/deploy-preview@master
+      uses: okteto/deploy-preview@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
