@@ -21,16 +21,41 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-c
 RUN npm install -g yarn pm2
 RUN apt -y install unzip
 
+WORKDIR crusher
+COPY package*.json ./
+COPY yarn*.lock ./
+COPY tsconfig.json ./
+
+COPY ./packages/code-generator/package.json ./packages/code-generator/
+COPY ./packages/crusher-app/package.json ./packages/crusher-app/
+COPY ./packages/crusher-app/yarn.lock ./packages/crusher-app/
+COPY ./packages/dyson/yarn.lock ./packages/dyson/
+COPY ./packages/crusher-server/package.json ./packages/crusher-server/
+COPY ./packages/crusher-shared/ ./packages/crusher-shared/
+COPY ./packages/dyson/package.json ./packages/dyson/
+COPY ./packages/electron-app/package.json ./packages/electron-app/
+COPY ./packages/runner-utils/ ./packages/runner-utils/
+COPY ./packages/test-runner/package.json ./packages/test-runner/
+COPY ./packages/unique-selector/package.json ./packages/unique-selector/
+COPY ./packages/video-processor/package.json ./packages/video-processor/
+COPY ./scripts ./scripts
+COPY ./packages/electron-app/scripts ./packages/electron-app/scripts
+COPY ./patches ./patches
+
+RUN  apt-get install -y git && apt-get install -y wget
+RUN yarn set version berry
+RUN yarn install
 
 COPY . ./crusher
-WORKDIR crusher
+# RUN cp ./ecosystem.config.sample.js ecosystem.config.js
+# WORKDIR crusher
 
 
 # # RUN mkdir db && curl "$SCHEMA_OBJ_URL" > db/schema.sql
 
-RUN yarn set version berry
-RUN yarn install
-RUN yarn setup:ee
+# RUN yarn set version berry
+# RUN yarn install
+# RUN yarn setup:ee
 
 
 # ENV STANDALONE_APP_URL=https://$GIT_BRANCH.test-app.crusher.dev \
