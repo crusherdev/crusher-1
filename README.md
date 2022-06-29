@@ -9,7 +9,7 @@
 </p>
 </p>
 
-<h3 align="center">Test more & fast with low-code</h3>
+<h3 align="center">Test more & fast wdith low-code</h3>
 <p align="center">Open-source testing framework to test with no effort.</p>
 
 <div align="center">
