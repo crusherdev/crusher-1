@@ -46,7 +46,7 @@ RUN  apt-get install -y git && apt-get install -y wget
 RUN yarn set version berry
 RUN yarn install
 
-COPY . ./crusher
+COPY . ./
 # RUN cp ./ecosystem.config.sample.js ecosystem.config.js
 # WORKDIR crusher
 
@@ -63,10 +63,10 @@ COPY . ./crusher
 #     NEXT_PUBLIC_CRUSHER_MODE=enterprise \
 #     CRUSHER_ENV=production \
 #     FILE_SERVER_PROXY=https://$GIT_BRANCH.test-app.crusher.dev/output/
+ENV  CRUSHER_ENV=production 
+RUN NODE_OPTIONS=--max-old-space-size=8096 sh scripts/build/build-all.sh
 
-# RUN NEXT_PUBLIC_INTERNAL_BACKEND_URL="$NEXT_PUBLIC_INTERNAL_BACKEND_URL" NODE_OPTIONS=--max-old-space-size=8096 sh scripts/build/build-all.sh
-
-# RUN rm -R packages && mkdir packages && cp -R output/* packages/
+RUN rm -R packages && mkdir packages && cp -R output/* packages/
 
 # # RUN sudo chmod +x /usr/local/bin/docker-compose
 # RUN cp ./configs/.env.layerci .env
@@ -75,7 +75,7 @@ COPY . ./crusher
 # # RUN REPEATABLE STANDALONE_APP_URL="$STANDALONE_APP_URL" docker-compose -f docker/ee/docker-compose.yml up --build -d --force-recreate postgres redis
 
 # # RUN node setup/dbMigration.js
-# RUN cp ./ecosystem.config.sample.js ecosystem.config.js
+RUN cp ./ecosystem.config.sample.js ecosystem.config.js
 
 
 
